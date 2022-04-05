@@ -1,3 +1,9 @@
+/**
+ * TeamStatistics.java
+ * This is the TeamStatistics entity
+ * @author Mike Somelezo Tyolani (220187568)
+ * 04 April 2022
+ */
 package za.ac.cput.entity;
 
 public class TeamStatistics {
