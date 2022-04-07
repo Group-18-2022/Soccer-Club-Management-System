@@ -12,7 +12,11 @@ public class ContactInfoManager {
     }
 
     public ContactDetails constructInfo(){
-        //The dummy data can be replaced by input data from the user if GUI is implemented
+        /**
+         * The dummy data can be replaced by input data from the user if GUI
+         * is implemented if we wish to keep the construction of the objects
+         * out of the client code at a later stage.
+         * **/
             builder.init();
             builder.setContactID(1);
             builder.setStreetName("LongStreet");
