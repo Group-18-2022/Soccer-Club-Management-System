@@ -5,7 +5,7 @@ package za.ac.cput.entity.contactDetailsEntity;
  * 05 April 2022
  * **/
 public class ContactDetails {
-    private String contactID;
+    private int contactID;
     private String streetName;
     private String streetNumber;
     private String Area;
@@ -14,7 +14,7 @@ public class ContactDetails {
     private String phoneNumber;
     private String emailAddress;
 
-    public void setContactID(String contactID) {
+    public void setContactID(int contactID) {
         this.contactID = contactID;
     }
 

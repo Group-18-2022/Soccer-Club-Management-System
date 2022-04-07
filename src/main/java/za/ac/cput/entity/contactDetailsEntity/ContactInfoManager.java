@@ -1,6 +1,6 @@
 package za.ac.cput.entity.contactDetailsEntity;
 /**
- * This is the Contact Information Manager(optional)
+ * This is the Contact Information Manager(this class is optional)
  * @author Charles Moses Lemmert (220498385)
  * 05 April 2022
  * **/
@@ -14,7 +14,7 @@ public class ContactInfoManager {
     public ContactDetails constructInfo(){
         //The dummy data can be replaced by input data from the user if GUI is implemented
             builder.init();
-            builder.setContactID("1");
+            builder.setContactID(1);
             builder.setStreetName("LongStreet");
             builder.setStreetNumber("21A");
             builder.setArea("City Bowl");

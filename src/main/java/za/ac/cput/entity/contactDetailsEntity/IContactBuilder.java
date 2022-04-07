@@ -6,7 +6,7 @@ package za.ac.cput.entity.contactDetailsEntity;
  * **/
 public interface IContactBuilder {
         void init();
-        void setContactID(String contactID);
+        void setContactID(int contactID);
         void setStreetName(String streetName);
         void setStreetNumber(String streetNumber);
         void setArea(String area);

@@ -7,7 +7,6 @@ package za.ac.cput.entity.clubEntity;
  * **/
 public class Club {
 
-//    ContactInfoManager builder;
     private String clubID;
     private String clubName;
     private String clubOwner;

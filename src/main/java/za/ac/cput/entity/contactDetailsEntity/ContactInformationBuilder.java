@@ -13,7 +13,7 @@ public class ContactInformationBuilder implements IContactBuilder{
     }
 
     @Override
-    public void setContactID(String contactID) {
+    public void setContactID(int contactID) {
         contactDetails.setContactID(contactID);
     }
 
