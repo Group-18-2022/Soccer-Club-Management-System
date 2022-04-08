@@ -1,6 +1,6 @@
 package za.ac.cput.entity;
 /**
- * This is the Contact Details entity
+ * This is the Contact Information entity
  * @author Charles Moses Lemmert (220498385)
  * 05 April 2022
  * **/
