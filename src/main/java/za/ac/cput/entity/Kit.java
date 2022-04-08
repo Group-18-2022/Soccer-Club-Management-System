@@ -1,12 +1,12 @@
 package za.ac.cput.entity;
 
 /*
- * Karl Haupt (220236585)
+ * @author Karl Haupt (220236585)
  * Kit.java -> is an entity in the problem domain to store the various kit(s) that team(s) can wear.
  */
 
 public class Kit {
-    private String kitType;
+    private String kitType = "Default";
     private String kitColor;
     private String kitBrand;
 

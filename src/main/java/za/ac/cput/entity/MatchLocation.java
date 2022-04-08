@@ -1,5 +1,10 @@
 package za.ac.cput.entity;
 
+/*
+ * @author Karl Haupt (220236585)
+ * MatchLocation.java -> is an entity in the problem domain to associate Match with Location.
+ */
+
 public class MatchLocation {
     private String matchId;
     private String locationId;

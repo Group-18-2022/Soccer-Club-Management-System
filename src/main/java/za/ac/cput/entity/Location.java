@@ -1,19 +1,19 @@
 package za.ac.cput.entity;
 
 /*
-* Karl Haupt (220236585)
+* @author Karl Haupt (220236585)
 * Location.java -> is an entity in the problem domain to store the various location that soccer clubs can play at.
 * */
 
 public class Location {
-    private int locationId;
+    private String locationId;
     private String stadiumName;
 
     private Location(Builder builder) {
         this.stadiumName = builder.stadiumName;
     }
 
-    public int getLocationId() {
+    public String getLocationId() {
         return locationId;
     }
 
@@ -30,10 +30,10 @@ public class Location {
     }
 
     public static class Builder {
-        private int locationId;
+        private String locationId;
         private String stadiumName;
 
-        public Builder setLocationId(int locationId) {
+        public Builder setLocationId(String locationId) {
             this.locationId = locationId;
             return this;
         }

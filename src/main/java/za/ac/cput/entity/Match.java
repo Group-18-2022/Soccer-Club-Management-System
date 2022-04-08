@@ -1,12 +1,12 @@
 package za.ac.cput.entity;
 
 /*
- * Karl Haupt (220236585)
+ * @author Karl Haupt (220236585)
  * Match.java -> is an entity in the problem domain to store the various match(s) that team(s) would or have played.
  */
 
 public class Match {
-    private int matchId;
+    private String matchId;
     private String kitType;
     private String opponent;
     private String date;
@@ -19,7 +19,7 @@ public class Match {
         this.time = builder.time;
     }
 
-    public int getMatchId() {
+    public String getMatchId() {
         return matchId;
     }
 
@@ -51,13 +51,13 @@ public class Match {
     }
 
     public static class Builder {
-        private int matchId;
+        private String matchId;
         private String kitType;
         private String opponent;
         private String date;
         private String time;
 
-        public Builder setMatchId(int matchId) {
+        public Builder setMatchId(String matchId) {
             this.matchId = matchId;
             return this;
         }
