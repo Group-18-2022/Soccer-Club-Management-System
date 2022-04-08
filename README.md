@@ -19,9 +19,9 @@ captured in a reliable and efficient manner. The information needs to be stored 
 Pull requests are welcome. For major changes, please open an issue first to discuss changes/modification.
 
 ### Contributors
-*      [KARL WILLIAM HAUPT](https://github.com/Karl-Haupt)
-*      [JOSHUA DANIEL JONKERS](https://github.com/JoshJonk)
-*      [TREVOR STHEMBISO NGCOBO](https://github.com/TrevorNgcobo)
-*      [CHARLES MOSES LEMMERT](https://github.com/Astro-Alien)
-*      [MPONENGE ZIKHONA RATEGO](https://github.com/MANtor123)
-*      [MIKE SOMELEZO TYOLANI](https://github.com/miketyo)
+[KARL WILLIAM HAUPT](https://github.com/Karl-Haupt)
+[JOSHUA DANIEL JONKERS](https://github.com/JoshJonk)
+[TREVOR STHEMBISO NGCOBO](https://github.com/TrevorNgcobo)
+[CHARLES MOSES LEMMERT](https://github.com/Astro-Alien)
+[MPONENGE ZIKHONA RATEGO](https://github.com/MANtor123)
+[MIKE SOMELEZO TYOLANI](https://github.com/miketyo)
