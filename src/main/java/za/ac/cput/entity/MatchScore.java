@@ -28,6 +28,15 @@ public class MatchScore {
         return teamScore;
     }
 
+    @Override
+    public String toString() {
+        return "MatchScore{" +
+                "matchID=" + matchID +
+                ", opponentScore=" + opponentScore +
+                ", teamScore=" + teamScore +
+                '}';
+    }
+
     public static class Builder {
         private int matchID;
         private int opponentScore;

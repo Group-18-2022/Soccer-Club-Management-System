@@ -39,6 +39,17 @@ public class Match {
         return time;
     }
 
+    @Override
+    public String toString() {
+        return "Match{" +
+                "matchId=" + matchId +
+                ", kitType='" + kitType + '\'' +
+                ", opponent='" + opponent + '\'' +
+                ", date='" + date + '\'' +
+                ", time='" + time + '\'' +
+                '}';
+    }
+
     public static class Builder {
         private int matchId;
         private String kitType;

@@ -21,6 +21,14 @@ public class Location {
         return stadiumName;
     }
 
+    @Override
+    public String toString() {
+        return "Location{" +
+                "locationId=" + locationId +
+                ", stadiumName='" + stadiumName + '\'' +
+                '}';
+    }
+
     public static class Builder {
         private int locationId;
         private String stadiumName;

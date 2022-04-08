@@ -28,6 +28,15 @@ public class Kit {
         return kitBrand;
     }
 
+    @Override
+    public String toString() {
+        return "Kit{" +
+                "kitType='" + kitType + '\'' +
+                ", kitColor='" + kitColor + '\'' +
+                ", kitBrand='" + kitBrand + '\'' +
+                '}';
+    }
+
     public static class Builder {
         private String kitType;
         private String kitColor;
