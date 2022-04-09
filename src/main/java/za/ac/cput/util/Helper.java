@@ -9,8 +9,16 @@ public class Helper {
         return UUID.randomUUID().toString();
     }
 
-    public static boolean isValidEmail(String emailAddress){
+    public static boolean isValidEmail(String emailAddress) {
         EmailValidator validateEmail = EmailValidator.getInstance();
         return validateEmail.isValid(emailAddress);
+    }
+
+    public static boolean isNull(String value) {
+        return value == null;
+    }
+
+    public static boolean isEmpty(String value) {
+        return value.equals("");
     }
 }
