@@ -1,5 +1,5 @@
 /**
- * TeamStatistics.java
+ * TeamFactory.java
  * This is the TeamFactory
  * @author Mike Somelezo Tyolani (220187568)
  * 04 April 2022
