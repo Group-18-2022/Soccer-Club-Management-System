@@ -1,31 +1,30 @@
 package za.ac.cput.factory;
 
-import org.junit.jupiter.api.AfterEach;
+/*
+ * @author Karl Haupt (220236585)
+ * LocationFactoryTest.java -> is a testing class that is used to test the LocationFactory class.
+ */
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
+import za.ac.cput.entity.Location;
 import static org.junit.jupiter.api.Assertions.*;
 
 class LocationFactoryTest {
+    private Location location;
 
-
-//    @BeforeEach
-//    void setUp() {
-//    }
-//
-//    @AfterEach
-//    void tearDown() {
-//    }
+    @BeforeEach
+    void setUp() {
+        location = LocationFactory.createLocation("Cape Town Stadium");
+    }
 
     @Test
     public void testLocationFactoryCreate() {
-        var location = LocationFactory.createLocation("Cape Town Stadium");
         assertNotNull(location);
     }
 
     @Test
-    public void testLocationFactoryValues() {
-        var location = LocationFactory.createLocation("Cape Town Stadium");
+    public void testStadiumNameValues() {
         assertEquals("Cape Town Stadium", location.getStadiumName());
     }
 

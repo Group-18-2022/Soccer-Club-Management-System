@@ -11,6 +11,8 @@ import za.ac.cput.util.Helper;
 public class MatchFactory {
 
     public static Match createMatch(String opponent, String kitType, String date, String time) {
+        if(isInvalidParameters(opponent, kitType, date, time)) throw new IllegalStateException("Invalid values");
+
         String matchID = Helper.generateID();
         var match = new Match.Builder()
                 .setMatchId(matchID)
@@ -21,5 +23,10 @@ public class MatchFactory {
                 .build();
 
         return match;
+    }
+
+    private static boolean isInvalidParameters(String opponent, String kitType, String date, String time) {
+        return (Helper.isNull(opponent) || Helper.isNull(kitType) || Helper.isNull(date) || Helper.isNull(time) ||
+                Helper.isEmpty(opponent) || Helper.isEmpty(kitType) || Helper.isEmpty(date) || Helper.isEmpty(time));
     }
 }
