@@ -13,6 +13,7 @@ public class Match {
     private String time;
 
     private Match(Builder builder) {
+        this.matchId = builder.matchId;
         this.kitType = builder.kitType;
         this.opponent = builder.opponent;
         this.date = builder.date;

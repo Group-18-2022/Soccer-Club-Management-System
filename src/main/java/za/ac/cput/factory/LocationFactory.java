@@ -11,6 +11,8 @@ import za.ac.cput.util.Helper;
 public class LocationFactory {
 
     public static Location createLocation(String stadiumName) {
+        if(Helper.isNull(stadiumName) || Helper.isEmpty(stadiumName)) throw new IllegalStateException("Invalid value");
+
         String locationID = Helper.generateID();
         var location = new Location.Builder()
                 .setLocationId(locationID)
