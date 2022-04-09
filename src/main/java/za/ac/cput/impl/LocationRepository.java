@@ -27,26 +27,40 @@ public class LocationRepository implements IRepositoryLocation {
 
     @Override
     public Location read(String locationID) {
-
+        var location = locationDB.stream()
+                .filter(l -> l.getLocationId().equals(locationID))
+                .findAny().orElse(null);
+        return location;
     }
 
     @Override
     public Location update(Location location) {
+        var currentLocation = read(location.getLocationId());
+        if(currentLocation != null) {
+            locationDB.remove(currentLocation);
+            locationDB.add(location);
+            return location;
+        }
         return null;
     }
 
     @Override
-    public boolean delete(String s) {
-        return false;
+    public boolean delete(String locationID) {
+        boolean isSuccessful = true;
+        var locationToDelete = read(locationID);
+        if(locationToDelete != null) isSuccessful = locationDB.remove(locationToDelete);
+        return isSuccessful;
     }
 
     @Override
     public Set<Location> getAll() {
-        return null;
+        return locationDB;
     }
 
     @Override
-    public boolean contains(String ID) {
+    public boolean contains(String locationID) {
+        var location = read(locationID);
+        if(location != null) return true;
         return false;
     }
 }
