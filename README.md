@@ -9,7 +9,7 @@ the team will be expanding due to the promotion into the new league. The system 
 captured in a reliable and efficient manner. The information needs to be stored safely and needs to be accessible easily.   
 
 ## UML Diagram
-![ERD - ADP3 (With Employee Changes) (1)](https://user-images.githubusercontent.com/69191757/162582221-527e2df3-d144-4f5c-9c08-4befaaae1ff8.png)
+![ERD - ADP3 (With Employee Changes) (2)](https://user-images.githubusercontent.com/69191757/162582366-f8499409-717d-42e4-835c-8903aa1cff0f.png)
 
 ## Installation (Coming soon)
 <!-- 1. Download/Clone the repository onto your computer and run it using an Java compiler
