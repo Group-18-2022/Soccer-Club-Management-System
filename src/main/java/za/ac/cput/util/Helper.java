@@ -13,4 +13,10 @@ public class Helper {
         EmailValidator validateEmail = EmailValidator.getInstance();
         return validateEmail.isValid(emailAddress);
     }
+
+    public static boolean isNullOrEmpty(Object o)
+    {
+        return (o == null || o.equals(""));
+    }
+
 }
