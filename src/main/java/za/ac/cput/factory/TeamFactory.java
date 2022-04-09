@@ -1,16 +1,22 @@
+/**
+ * TeamStatistics.java
+ * This is the TeamFactory
+ * @author Mike Somelezo Tyolani (220187568)
+ * 04 April 2022
+ */
 package za.ac.cput.factory;
 
-import za.ac.cput.entity.TeamStatistics;
+import za.ac.cput.entity.Team;
 import za.ac.cput.util.Helper;
 
-public class TeamStatisticsFactory {
-    public static TeamStatistics createTeamStatistics(String trophiesWon, String matchesPlayed) {
+public class TeamFactory {
+    public static Team createTeam(String teamName, String numberOfPlayers, String maxNumberOfPlayers) {
 
         String teamId = Helper.generateID();
-        return new TeamStatistics.Builder().setTeamId(teamId)
-                .setTrophiesWon(trophiesWon)
-                .setMatchesPlayed(matchesPlayed)
+        return new Team.Builder().setTeamId(teamId)
+                .setTeamName(teamName)
+                .setNumberOfPlayers(numberOfPlayers)
+                .setMaxNumberOfPlayers(maxNumberOfPlayers)
                 .build();
     }
 }
-
