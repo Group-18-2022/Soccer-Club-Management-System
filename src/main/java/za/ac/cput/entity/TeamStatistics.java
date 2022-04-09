@@ -13,7 +13,7 @@ public class TeamStatistics {
     private String matchesPlayed;
 
     //private constructor
-    private TeamStatistics (TeamStatistics.Builder builder){
+    private TeamStatistics (Builder builder){
         this.teamId = builder.teamId;
         this.trophiesWon = builder.trophiesWon;
         this.matchesPlayed = builder.matchesPlayed;
