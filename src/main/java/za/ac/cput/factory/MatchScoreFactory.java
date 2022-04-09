@@ -1,6 +1,7 @@
 package za.ac.cput.factory;
 
 import za.ac.cput.entity.MatchScore;
+import za.ac.cput.util.Helper;
 
 /*
  * @author Karl Haupt (220236585)
@@ -9,6 +10,9 @@ import za.ac.cput.entity.MatchScore;
 public class MatchScoreFactory {
 
     public static MatchScore createMatchScore(String matchID, byte opponentScore, byte teamScore) {
+        if(Helper.isNull(matchID) || Helper.isEmpty(matchID) ||
+           !isPositive(opponentScore) || !isPositive(teamScore)) throw  new IllegalStateException("Invalid values");
+
         var matchScore = new MatchScore.Builder()
                 .setMatchID(matchID)
                 .setOpponentScore(opponentScore)
@@ -16,5 +20,9 @@ public class MatchScoreFactory {
                 .build();
 
         return matchScore;
+    }
+
+    private static boolean isPositive(byte number) {
+        return (number >= 0);
     }
 }

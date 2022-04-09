@@ -1,6 +1,7 @@
 package za.ac.cput.factory;
 
 import za.ac.cput.entity.Kit;
+import za.ac.cput.util.Helper;
 
 /*
  * @author Karl Haupt (220236585)
@@ -10,6 +11,8 @@ import za.ac.cput.entity.Kit;
 public class KitFactory {
 
     public static Kit createKit(String kitType, String kitColour, String kitBrand) {
+        if(isValidParameters(kitType, kitColour)) throw new IllegalStateException("Invalid values");
+
         var kit = new Kit.Builder()
                 .setKitType(kitType)
                 .setKitColor(kitColour)
@@ -17,5 +20,9 @@ public class KitFactory {
                 .build();
 
         return kit;
+    }
+
+    private static boolean isValidParameters(String kitType, String kitColour) {
+        return (Helper.isNull(kitType) || Helper.isNull(kitColour) || Helper.isEmpty(kitType) || Helper.isEmpty(kitColour));
     }
 }

@@ -10,6 +10,7 @@ public class Location {
     private String stadiumName;
 
     private Location(Builder builder) {
+        this.locationId = builder.locationId;
         this.stadiumName = builder.stadiumName;
     }
 
