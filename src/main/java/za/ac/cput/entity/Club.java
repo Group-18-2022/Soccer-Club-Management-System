@@ -29,7 +29,7 @@ public class Club {
         return clubOwner;
     }
 
-    public boolean isRegisteredClub() {
+    public boolean getIsRegisteredClub() {
         return isRegisteredClub;
     }
 

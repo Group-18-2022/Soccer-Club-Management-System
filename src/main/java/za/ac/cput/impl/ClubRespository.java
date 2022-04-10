@@ -19,7 +19,7 @@ public class ClubRespository implements  IClubRepository{
         clubDB = new HashSet<>();
     }
 
-    private static ClubRespository getClubRespository(){
+    public static ClubRespository getClubRespository(){
         if(clubRespository == null) clubRespository = new ClubRespository();
         return clubRespository;
     }
@@ -27,7 +27,6 @@ public class ClubRespository implements  IClubRepository{
     public Club create(Club club) {
         boolean createClub = clubDB.add(club);
         if(!createClub)return null;
-        System.out.println("The Record Has Been Created.");
         return club;
     }
 
@@ -47,7 +46,6 @@ public class ClubRespository implements  IClubRepository{
         if(updateClub != null){
             clubDB.remove(updateClub);
             clubDB.add(updateClub);
-            System.out.println("The Record Has Been Updated.");
             return club;
         }
         return null;
@@ -58,7 +56,6 @@ public class ClubRespository implements  IClubRepository{
         Club deleteClub = read(clubID);
         if(deleteClub != null){
             clubDB.remove(deleteClub);
-            System.out.println("The Record Has Been Deleted.");
             return true;
         }
         return false;
