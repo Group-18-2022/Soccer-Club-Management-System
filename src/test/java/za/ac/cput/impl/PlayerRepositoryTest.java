@@ -59,5 +59,5 @@ class PlayerRepositoryTest
         boolean b = new PlayerRepository().delete(personalDetails.getIdNumber());
         assertEquals(true, b);
     }
-    
+
 }
