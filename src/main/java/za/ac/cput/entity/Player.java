@@ -19,6 +19,22 @@ public class Player
     private String teamId;
     PersonalDetails personalDetails;
 
+    public int getFieldPosition() {
+        return fieldPosition;
+    }
+
+    public int getJerseyNumber() {
+        return jerseyNumber;
+    }
+
+    public String getTeamId() {
+        return teamId;
+    }
+
+    public PersonalDetails getPersonalDetails() {
+        return personalDetails;
+    }
+
     private Player(Builder builder)
     {
         this.fieldPosition = builder.fieldPosition;
