@@ -32,7 +32,6 @@ public class Team {
         return teamName;
     }
 
-
     public String getNumberOfPlayers() {
         return numberOfPlayers;
     }
@@ -73,7 +72,7 @@ public class Team {
         }
 
         public Builder setMaxNumberOfPlayers(String maxNumberOfPlayers) {
-            this.numberOfPlayers = maxNumberOfPlayers;
+            this.maxNumberOfPlayers = maxNumberOfPlayers;
             return this;
         }
 
