@@ -20,6 +20,22 @@ public class Manager
     private int yearsExperience;
     PersonalDetails personalDetails;
 
+    public String getJobTitle() {
+        return jobTitle;
+    }
+
+    public String getClubName() {
+        return clubName;
+    }
+
+    public int getYearsExperience() {
+        return yearsExperience;
+    }
+
+    public PersonalDetails getPersonalDetails() {
+        return personalDetails;
+    }
+
     private Manager(Builder builder)
     {
         this.jobTitle = builder.jobTitle;
