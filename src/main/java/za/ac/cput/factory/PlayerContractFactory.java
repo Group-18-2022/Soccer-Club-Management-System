@@ -23,7 +23,5 @@ public class PlayerContract {
         return playerContract;
     }
 
-    private static boolean isValidParameters(localDate signedDate, LocalDate expDate) {
-        return (Helper.isNull(signedDate) || Helper.isNull(expDate) || Helper.isEmpty(signedDate) || Helper.isEmpty(expDate));
-    }
+
 }

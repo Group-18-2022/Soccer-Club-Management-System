@@ -23,7 +23,5 @@ public class ManagerContractFactory {
         return managerContract;
     }
 
-    private static boolean isValidParameters(String kitType, String kitColour) {
-        return (Helper.isNull(kitType) || Helper.isNull(kitColour) || Helper.isEmpty(kitType) || Helper.isEmpty(kitColour));
-    }
+
 }
