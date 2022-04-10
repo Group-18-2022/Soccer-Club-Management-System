@@ -3,7 +3,7 @@ package za.ac.cput.factory;
 /* VehicleFactory.java
    Factory for the Vehicle
    Author: Joshua Daniel Jonkers(215162668)
-   Date: 08/04/2022
+   Date: 09/04/2022
  */
 
 import za.ac.cput.entity.Vehicle;
