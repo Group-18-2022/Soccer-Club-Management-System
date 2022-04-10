@@ -53,6 +53,7 @@ public class MatchScoreRepository implements IRepositoryMatchScore {
     public boolean delete(String matchID) {
         boolean isSuccessful = true;
         var matchScoreToDelete = read(matchID);
+        System.out.println(matchID);
         if(matchScoreToDelete != null) isSuccessful = matchScoreDB.remove(matchScoreToDelete);
         return isSuccessful;
     }
