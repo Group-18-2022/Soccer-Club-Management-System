@@ -4,13 +4,15 @@ package za.ac.cput.entity;
  * @author Mponeng Ratego
  * 216178991
  */
+import java.entity.PersonalDetails;
+import java.time.LocalDate;
 
 public class Contract {
 
     private LocalDate signedDate;
     private LocalDate expDate;
-    private locationId signedLocation;
-    private witness personalDetails;
+    private String signedLocation;
+    private PersonalDetails personalDetails;
     private int duration;
 
     private Contract(Builder builder){
@@ -31,11 +33,11 @@ public class Contract {
 
 
 
-    public locationId getSignedLocation() {
+    public String getSignedLocation() {
         return signedLocation;
     }
 
-    public void setSignedLocation(locationId signedLocation) {
+    public void setSignedLocation(String signedLocation) {
         this.signedLocation = signedLocation;
     }
 
@@ -45,7 +47,7 @@ public class Contract {
         return personalDetails;
     }
 
-    public void setPersonalDetails(witness personalDetails) {
+    public void setPersonalDetails(PersonalDetails personalDetails) {
         this.personalDetails = personalDetails;
     }
 
@@ -83,7 +85,7 @@ public class Contract {
 
         private LocalDate signedDate;
         private LocalDate expDate;
-        private locationId signedLocation;
+        private String signedLocation;
         private witness personalDetails;
         private int duration;
 
@@ -99,12 +101,12 @@ public class Contract {
             return this;
         }
 
-        public Builder setSignedLocation(locationId signedLocation) {
+        public Builder setSignedLocation(String signedLocation) {
             this.signedLocation = signedLocation;
             return this;
         }
 
-        public Builder setPersonalDetails(witness personalDetails) {
+        public Builder setPersonalDetails(PersonalDetails personalDetails) {
             this.personalDetails = personalDetails;
             return this;
         }

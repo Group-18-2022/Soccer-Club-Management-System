@@ -5,6 +5,7 @@ Subject: Applications Development Practice 3
 Assessment: Assignment 1
 Group: 18
  */
+
 package za.ac.cput.impl;
 
 import za.ac.cput.entity.Player;
@@ -17,7 +18,7 @@ public class PlayerRepository implements IPlayerRepository
     private static PlayerRepository playerRepository = null;
     private static List<Player> playerList = null;
 
-    private PlayerRepository()
+    public PlayerRepository()
     {
         playerList = new ArrayList<Player>();
     }
