@@ -1,5 +1,9 @@
 package za.ac.cput.factory;
-
+/**
+ * This is the Contact Information Factory
+ * @author Charles Moses Lemmert (220498385)
+ * 08 April 2022
+ * **/
 import za.ac.cput.entity.ContactInformation;
 import za.ac.cput.util.Helper;
 
