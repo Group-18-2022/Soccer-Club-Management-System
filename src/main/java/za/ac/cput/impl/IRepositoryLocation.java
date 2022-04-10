@@ -1,5 +1,10 @@
 package za.ac.cput.impl;
 
+/*
+ * @author Karl Haupt (220236585)
+ * IRepositoryLocation.java -> is an interface that is used by LocationRepository.
+ */
+
 import za.ac.cput.entity.Location;
 import za.ac.cput.repository.IRepository;
 
