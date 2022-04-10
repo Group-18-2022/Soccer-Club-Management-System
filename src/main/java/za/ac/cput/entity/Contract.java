@@ -122,7 +122,7 @@ public class Contract {
             this.expDate = contract.expDate;
             this.signedLocation = contract.signedLocation;
             this.personalDetails = contract.personalDetails;
-            this.duration = contract.duration
+            this.duration = contract.duration;
 
             return this;
         }
