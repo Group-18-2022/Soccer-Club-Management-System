@@ -25,7 +25,6 @@ public class TeamStatistics {
         return teamId;
     }
 
-
     public String getTrophiesWon() {
         return trophiesWon;
     }
@@ -49,22 +48,22 @@ public class TeamStatistics {
         private String trophiesWon;
         private String matchesPlayed;
 
-        public TeamStatistics.Builder setTeamId(String teamId) {
+        public Builder setTeamId(String teamId) {
             this.teamId = teamId;
             return this;
         }
 
-        public TeamStatistics.Builder setTrophiesWon(String trophiesWon) {
+        public Builder setTrophiesWon(String trophiesWon) {
             this.trophiesWon = trophiesWon;
             return this;
         }
 
-        public TeamStatistics.Builder setMatchesPlayed(String matchesPlayed) {
+        public Builder setMatchesPlayed(String matchesPlayed) {
             this.matchesPlayed = matchesPlayed;
             return this;
         }
 
-        public TeamStatistics.Builder copy(TeamStatistics teamStatistics) {
+        public Builder copy(TeamStatistics teamStatistics) {
             this.teamId = teamStatistics.teamId;
             this.trophiesWon = teamStatistics.trophiesWon;
             this.matchesPlayed = teamStatistics.matchesPlayed;
