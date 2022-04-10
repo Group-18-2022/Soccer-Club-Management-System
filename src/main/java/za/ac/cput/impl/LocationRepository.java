@@ -1,12 +1,17 @@
 package za.ac.cput.impl;
 
+/*
+ * @author Karl Haupt (220236585)
+ * LocationRepository.java -> is a class that performs CRUD operations on the Location domain.
+ */
+
 import za.ac.cput.entity.Location;
 
 import java.util.HashSet;
 import java.util.Set;
 
 public class LocationRepository implements IRepositoryLocation {
-    private static LocationRepository repository;
+    private static LocationRepository repository = null;
     private Set<Location> locationDB;
 
     private LocationRepository() {
