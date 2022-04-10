@@ -11,11 +11,12 @@ import za.ac.cput.util.Helper;
 
 public class SponsorFactory {
 
-    public static Sponsor createSponsor(String roleID, String taxNumber, String companyName) {
-        if(Helper.isNull(roleID) || Helper.isNull(taxNumber) || Helper.isNull(companyName) ||
-            Helper.isEmpty(roleID) || Helper.isEmpty(taxNumber) || Helper.isEmpty(companyName))
+    public static Sponsor createSponsor(String taxNumber, String companyName) {
+        if(Helper.isNull(taxNumber) || Helper.isNull(companyName) ||
+            Helper.isEmpty(taxNumber) || Helper.isEmpty(companyName))
             throw new IllegalStateException("Invalid values");
 
+        String roleID = Helper.generateID();
         var sponsor = new Sponsor.Builder()
                 .setRoleID(roleID)
                 .setTaxNumber(taxNumber)
