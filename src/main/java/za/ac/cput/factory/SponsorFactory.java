@@ -3,7 +3,7 @@ package za.ac.cput.factory;
 /* SponsorFactory.java
    Factory for the Sponsor
    Author: Joshua Daniel Jonkers(215162668)
-   Date: 08/04/2022
+   Date: 09/04/2022
  */
 
 import za.ac.cput.entity.Sponsor;

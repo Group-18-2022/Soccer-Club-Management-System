@@ -1,5 +1,11 @@
 package za.ac.cput.factory;
 
+/* SponsorFactoryTest.java
+   FactoryTest for the Sponsor
+   Author: Joshua Daniel Jonkers(215162668)
+   Date: 09/04/2022
+ */
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import za.ac.cput.entity.Sponsor;
