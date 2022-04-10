@@ -12,12 +12,15 @@ public class Team {
     private String teamId;
     private String teamName;
     private String numberOfPlayers;
+    private String maxNumberOfPlayers;
+
 
     //private constructor
     private Team (Builder builder){
         this.teamId = builder.teamId;
         this.teamName = builder.teamName;
         this.numberOfPlayers = builder.numberOfPlayers;
+        this.maxNumberOfPlayers = builder.maxNumberOfPlayers;
     }
 
     //Getters
@@ -34,6 +37,8 @@ public class Team {
         return numberOfPlayers;
     }
 
+    public String getMaxNumberOfPlayers() {return maxNumberOfPlayers;}
+
 
     @Override
     public String toString() {
@@ -41,6 +46,7 @@ public class Team {
                 "teamId='" + teamId + '\'' +
                 ", teamName='" + teamName + '\'' +
                 ", numberOfPlayers='" + numberOfPlayers + '\'' +
+                ", maxNumberOfPlayers='" + maxNumberOfPlayers + '\'' +
                 '}';
     }
 
@@ -49,6 +55,7 @@ public class Team {
         private String teamId;
         private String teamName;
         private String numberOfPlayers;
+        private String maxNumberOfPlayers;
 
         public Builder setTeamId(String teamId) {
             this.teamId = teamId;
@@ -65,10 +72,16 @@ public class Team {
             return this;
         }
 
+        public Builder setMaxNumberOfPlayers(String maxNumberOfPlayers) {
+            this.numberOfPlayers = maxNumberOfPlayers;
+            return this;
+        }
+
         public Builder copy(Team team) {
             this.teamId = team.teamId;
             this.teamName = team.teamName;
             this.numberOfPlayers = team.numberOfPlayers;
+            this.maxNumberOfPlayers = team.maxNumberOfPlayers;
             return this;
         }
 
