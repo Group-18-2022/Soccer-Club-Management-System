@@ -34,13 +34,14 @@ class ContactInformationRepositoryTest {
     }
     @Test
     void c_update() {
-        ContactInformation updateContactInfo = new ContactInformation.ContactInfoBuilder().copy(contactInformation)
+        ContactInformation update = new ContactInformation.ContactInfoBuilder().copy(contactInformation)
                 .setStreetNumber("12A")
                 .setCity("Randontein")
                 .setArea("Greenhills")
                 .setZipCode(1759)
                 .setPhoneNumber("012 222 6523")
                 .build();
+        ContactInformation updateContactInfo = contactInfoRepository.update(update);
         assertNotSame(contactInformation,updateContactInfo);
         System.out.printf("Contact Information Record: %n %s %nUpdated Contact Information Record: %n %s %n"
                 ,contactInformation,updateContactInfo);
