@@ -33,11 +33,11 @@ class ClubRespositoryTest {
 
     @Test
     void c_update() {
-        Club updateClub = new Club.ClubBuilder().copy(club)
+        Club update = new Club.ClubBuilder().copy(club)
                 .setClubOwner("James Lukas")
                 .setRegisteredClub(false)
                 .build();
-
+        Club updateClub = clubRespository.update(update);
         assertNotSame(club,updateClub);
         System.out.printf("Club Record: %n %s %nUpdated Club Record: %n %s %n"
                 ,club,updateClub);
