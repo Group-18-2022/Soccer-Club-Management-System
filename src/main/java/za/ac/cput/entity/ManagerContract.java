@@ -4,6 +4,7 @@ package za.ac.cput.entity;
  * @author Mponeng Ratego
  * 216178991
  */
+import java.entity.Contract;
 
 public class ManagerContract {
     private int contractid;
