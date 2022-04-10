@@ -18,6 +18,26 @@ public class PersonalDetails
     private LocalDate dateOfBirth;
     private ContactInformation contactDetails;
 
+    public String getIdNumber() {
+        return idNumber;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public ContactInformation getContactDetails() {
+        return contactDetails;
+    }
+
     private PersonalDetails(Builder builder)
     {
         this.idNumber = builder.idNumber;
