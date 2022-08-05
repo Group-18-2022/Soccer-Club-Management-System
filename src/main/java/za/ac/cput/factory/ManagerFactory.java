@@ -8,8 +8,8 @@ Group: 18
 
 package za.ac.cput.factory;
 
-import za.ac.cput.entity.Manager;
-import za.ac.cput.entity.PersonalDetails;
+import za.ac.cput.domain.Manager;
+import za.ac.cput.domain.PersonalDetails;
 
 public class ManagerFactory
 {

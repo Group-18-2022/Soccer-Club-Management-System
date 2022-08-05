@@ -9,8 +9,8 @@ Group: 18
 package za.ac.cput.factory;
 
 import org.junit.jupiter.api.Test;
-import za.ac.cput.entity.Manager;
-import za.ac.cput.entity.PersonalDetails;
+import za.ac.cput.domain.Manager;
+import za.ac.cput.domain.PersonalDetails;
 
 import static org.junit.jupiter.api.Assertions.*;
 

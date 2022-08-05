@@ -6,7 +6,7 @@
  */
 package za.ac.cput.factory;
 
-import za.ac.cput.entity.TeamStatistics;
+import za.ac.cput.domain.TeamStatistics;
 import za.ac.cput.util.Helper;
 
 public class TeamStatisticsFactory {

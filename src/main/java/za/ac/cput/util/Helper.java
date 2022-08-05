@@ -1,5 +1,6 @@
 package za.ac.cput.util;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.validator.routines.EmailValidator;
 
 import java.util.UUID;
@@ -14,18 +15,14 @@ public class Helper {
         return validateEmail.isValid(emailAddress);
     }
 
-
-    public static boolean isNullOrEmpty(Object o)
-    {
-        return (o == null || o.equals(""));
+    public static boolean isEmptyOrNull(String s) {
+        return StringUtils.isEmpty(s);
     }
 
-
-    public static boolean isNull(String value) {
-        return value == null;
-    }
-
-    public static boolean isEmpty(String value) {
-        return value.equals("");
+    public static void checkStringParam(String paramName, String paramValue) {
+        if(isEmptyOrNull(paramValue))
+            throw new IllegalArgumentException(
+                    String.format("Invalid value for params: %s", paramName)
+            );
     }
 }
