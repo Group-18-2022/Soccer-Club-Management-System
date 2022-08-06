@@ -1,16 +1,27 @@
 package za.ac.cput.domain.club;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+
 /**
  * This is the Club entity
  * @author Charles Moses Lemmert (220498385)
  * 05 April 2022
  * **/
+@Entity
 public class Club {
-
+    @NotNull @Id
     private String clubID;
+    @NotNull
     private String clubName;
+    @NotNull
     private String clubOwner;
+    @NotNull
     private boolean isRegisteredClub;
 
+
+    protected  Club(){}
     private Club(ClubBuilder builder){
         this.clubID = builder.clubID;
         this.clubName = builder.clubName;

@@ -11,8 +11,8 @@ import za.ac.cput.util.Helper;
 public class ClubFactory {
     public static Club createClub(String clubName,String clubOwner,boolean isRegisteredClub){
 
-//        if(Helper.isNull(clubName) || Helper.isNull(clubOwner)) return null;
-//        if(Helper.isEmpty(clubName) || Helper.isEmpty(clubOwner)) return null;
+        if(Helper.isEmptyOrNull(clubName) || Helper.isEmptyOrNull(clubOwner)) return null;
+        if(Helper.isEmptyOrNull(clubName) || Helper.isEmptyOrNull(clubOwner)) return null;
 
         String clubID = Helper.generateID();
         return new Club.ClubBuilder()

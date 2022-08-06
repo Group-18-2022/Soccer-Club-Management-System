@@ -1,19 +1,34 @@
-package za.ac.cput.domain;
+package za.ac.cput.domain.club;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+
 /**
  * This is the Contact Information entity
  * @author Charles Moses Lemmert (220498385)
  * 05 April 2022
  * **/
+@Entity
 public class ContactInformation {
+    @NotNull @Id
     private String contactID;
+    @NotNull
     private String streetName;
+    @NotNull
     private String streetNumber;
+    @NotNull
     private String Area;
+    @NotNull
     private String City;
+    @NotNull
     private int zipCode;
+    @NotNull
     private String phoneNumber;
+    @NotNull
     private String emailAddress;
 
+    protected  ContactInformation(){}
     public ContactInformation(ContactInfoBuilder builder) {
         this.contactID = builder.contactID;
         this.streetName = builder.streetName;;

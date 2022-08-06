@@ -8,9 +8,8 @@ Group: 18
 
 package za.ac.cput.factory;
 
-import za.ac.cput.domain.ContactInformation;
+import za.ac.cput.domain.club.ContactInformation;
 import za.ac.cput.domain.PersonalDetails;
-import za.ac.cput.util.Helper;
 
 import java.time.LocalDate;
 
