@@ -8,9 +8,8 @@ Group: 18
 
 package za.ac.cput.factory;
 
-import za.ac.cput.entity.ContactInformation;
-import za.ac.cput.entity.PersonalDetails;
-import za.ac.cput.util.Helper;
+import za.ac.cput.domain.club.ContactInformation;
+import za.ac.cput.domain.PersonalDetails;
 
 import java.time.LocalDate;
 
@@ -19,11 +18,11 @@ public class PersonalDetailsFactory
 
     public static PersonalDetails createPersonalDetails(String id, String name, String surname, LocalDate dOb, ContactInformation contactDetails)
     {
-        if(Helper.isNullOrEmpty(id))
-        {
-            return null;
-        }
-        else
+//        if(Helper.isNullOrEmpty(id))
+//        {
+//            return null;
+//        }
+//        else
         return new PersonalDetails.Builder()
                 .setIdNumber(id)
                 .setFirstName(name)

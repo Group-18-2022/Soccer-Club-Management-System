@@ -6,15 +6,15 @@ package za.ac.cput.factory;
    Date: 09/04/2022
  */
 
-import za.ac.cput.entity.Vehicle;
+import za.ac.cput.domain.Vehicle;
 import za.ac.cput.util.Helper;
 
 public class VehicleFactory {
 
     public static Vehicle createVehicle(String vinNumber, String modelType, String modelName, String capacity) {
-        if(Helper.isNull(vinNumber) || Helper.isNull(modelType) || Helper.isNull(modelName) || Helper.isNull(capacity) ||
-            Helper.isEmpty(vinNumber) || Helper.isEmpty(modelType) || Helper.isEmpty(modelName) || Helper.isEmpty(capacity))
-            throw new IllegalStateException("Invalid values");
+//        if(Helper.isNull(vinNumber) || Helper.isNull(modelType) || Helper.isNull(modelName) || Helper.isNull(capacity) ||
+//            Helper.isEmpty(vinNumber) || Helper.isEmpty(modelType) || Helper.isEmpty(modelName) || Helper.isEmpty(capacity))
+//            throw new IllegalStateException("Invalid values");
 
         var vehicle = new Vehicle.Builder()
                 .setVinNumber(vinNumber)
