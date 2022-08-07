@@ -6,12 +6,14 @@ Assessment: Assignment 1
 Group: 18
  */
 
-package za.ac.cput.factory;
+package za.ac.cput.factory.entity;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import za.ac.cput.domain.Manager;
-import za.ac.cput.domain.PersonalDetails;
+import za.ac.cput.domain.entity.Manager;
+import za.ac.cput.domain.lookup.PersonalDetails;
+import za.ac.cput.factory.entity.ManagerFactory;
+import za.ac.cput.factory.lookup.PersonalDetailsFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -26,7 +28,7 @@ class ManagerFactoryTest
     @Test
     public void createManagerTest()
     {
-        manager = ManagerFactory.createManager("Belville FC", "Marketing Manager",5, p);
+        manager = ManagerFactory.createManager("00001","Belville FC", "Marketing Manager",5, p);
 
         assertNotNull(manager);
         //test should pass since the details are valid
@@ -35,10 +37,10 @@ class ManagerFactoryTest
     @Test
     public void idRequisiteTest()
     {
-        manager = ManagerFactory.createManager("Belville FC", "Marketing Manager",5, null);
-        //since the personal details are null, the manager should also be null
+        manager = ManagerFactory.createManager("00001","Belville FC", "Marketing Manager",5, null);
+
         assertNull(manager);
-        //the test should pass
+
     }
 
 }
