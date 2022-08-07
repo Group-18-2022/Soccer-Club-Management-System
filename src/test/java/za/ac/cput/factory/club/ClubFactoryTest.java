@@ -18,11 +18,11 @@ class ClubFactoryTest {
     Club club;
     @BeforeEach
     public void setUp(){
-         club = ClubFactory.createClub("Chelsea","Roman Abramovich",true);
+         club = ClubFactory.createClub("1","Chelsea","Roman Abramovich",true);
     }
     @Test
     public void createClubFactoryPassingTest(){
-        Club club = ClubFactory.createClub("Super Strikers","Bob",true);
+        Club club = ClubFactory.createClub("2","Super Strikers","Bob",true);
         System.out.println("Club has been created: \n" +club + "\n");
         assertNotNull(club);
     }
@@ -42,7 +42,7 @@ class ClubFactoryTest {
     @Test
     public void failToCreateClubFactoryTest(){
         //checking validation code
-        Club club = ClubFactory.createClub("Super Strikers",null,true);
+        Club club = ClubFactory.createClub("2","Super Strikers",null,true);
         System.out.println("Club has not been created due to null value - return value: " +club +"\n");
         assertEquals(null,club);
     }

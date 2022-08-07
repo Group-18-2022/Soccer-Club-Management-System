@@ -1,4 +1,4 @@
-package za.ac.cput.factory;
+package za.ac.cput.factory.club;
 /**
  * This is the Contact Information Factory Test
  * @author Charles Moses Lemmert (220498385)
@@ -16,16 +16,16 @@ class ContactInformationFactoryTest {
     ContactInformation contactInformation;
     @BeforeEach
     public void setUp(){
-                 contactInfo = ContactInformationFactory.createContactInfo("15B",
+                 contactInfo = ContactInformationFactory.createContactInfo("1","15B",
                 "Bertie Genade Street","Parow", "Cape Town",7500,
                 "021 526 3304","superstrikers@supers.com");
-                 contactInformation = ContactInformationFactory.createContactInfo("12B", "Long Street","City Bowl",
+                 contactInformation = ContactInformationFactory.createContactInfo("2","12B", "Long Street","City Bowl",
                 "Cape Town", 7459,"0852553658","JenniferK@clubsports.com");
     }
     @Test
     public void contactInfoFailingValidationTest(){
         //failing email validation test and object is not created.
-        ContactInformation contactInfo = ContactInformationFactory.createContactInfo("12A", "Hanover Street","Goodwoord",
+        ContactInformation contactInfo = ContactInformationFactory.createContactInfo("1","12A", "Hanover Street","Goodwoord",
                 "Cape Town", 1245, "0852635542", "JamesJ.clubsports.com");
         System.out.println("\nContact information Object has not been created due to invalid Email - return =  " + contactInfo);
         assertEquals(null, contactInfo);
@@ -34,7 +34,7 @@ class ContactInformationFactoryTest {
     @Test
     public void contactInfoPassingValidationTest(){
         //Passing email validation test and object is created.
-        ContactInformation contactInfo = ContactInformationFactory.createContactInfo("12B", "Long Street","City Bowl",
+        ContactInformation contactInfo = ContactInformationFactory.createContactInfo("1","12B", "Long Street","City Bowl",
                 "Cape Town", 7459,"0852553658","AliceK@clubsports.com");
         assertNotNull(contactInfo.toString());
         System.out.println("\nContact information Object has been created:");
