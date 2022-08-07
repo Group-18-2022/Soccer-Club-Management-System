@@ -6,10 +6,10 @@ Assessment: Assignment 1
 Group: 18
  */
 
-package za.ac.cput.factory;
+package za.ac.cput.factory.lookup;
 
 import za.ac.cput.domain.club.ContactInformation;
-import za.ac.cput.domain.PersonalDetails;
+import za.ac.cput.domain.lookup.PersonalDetails;
 
 import java.time.LocalDate;
 

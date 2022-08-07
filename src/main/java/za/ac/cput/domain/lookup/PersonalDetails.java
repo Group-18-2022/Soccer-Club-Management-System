@@ -6,19 +6,33 @@ Assessment: Assignment 1
 Group: 18
  */
 
-package za.ac.cput.domain;
+package za.ac.cput.domain.lookup;
 
 import za.ac.cput.domain.club.ContactInformation;
 
+import javax.persistence.Embeddable;
+import javax.persistence.Embedded;
+import javax.persistence.OneToOne;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
+@Embeddable
 public class PersonalDetails
 {
+    @NotNull
     private String idNumber;
+    @NotNull
     private String firstName;
+    @NotNull
     private String surname;
+    @NotNull
     private LocalDate dateOfBirth;
+    @OneToOne
+    @NotNull
     private ContactInformation contactDetails;
+
+    protected PersonalDetails() {
+    }
 
     public String getIdNumber() {
         return idNumber;

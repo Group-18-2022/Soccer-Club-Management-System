@@ -6,14 +6,14 @@ Assessment: Assignment 1
 Group: 18
  */
 
-package za.ac.cput.factory;
+package za.ac.cput.factory.entity;
 
-import za.ac.cput.domain.Manager;
-import za.ac.cput.domain.PersonalDetails;
+import za.ac.cput.domain.entity.Manager;
+import za.ac.cput.domain.lookup.PersonalDetails;
 
 public class ManagerFactory
 {
-    public static Manager createManager(String clubName, String jobTitle, int years, PersonalDetails personalDetails)
+    public static Manager createManager(String empNumber, String clubName, String jobTitle, int years, PersonalDetails personalDetails)
     {
         if(personalDetails == null) //personalDetails has id number. We cannot create any type of user without the id number.
         {
@@ -21,6 +21,7 @@ public class ManagerFactory
         }
         else
         return new Manager.Builder()
+                .setEmpNumber(empNumber)
                 .setClubName(clubName)
                 .setJobTitle(jobTitle)
                 .setYearsExperience(years)
