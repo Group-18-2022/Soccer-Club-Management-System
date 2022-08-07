@@ -11,18 +11,15 @@ import za.ac.cput.util.Helper;
 
 public class SponsorFactory {
 
-    public static Sponsor createSponsor(String taxNumber, String companyName) {
-//        if(Helper.isNull(taxNumber) || Helper.isNull(companyName) ||
-//            Helper.isEmpty(taxNumber) || Helper.isEmpty(companyName))
-//            throw new IllegalStateException("Invalid values");
+    public static Sponsor createSponsor(String roleID, String taxNumber, String companyName) {
+        Helper.checkStringParam("roleID", roleID);
+        Helper.checkStringParam("taxNumber", taxNumber);
+        Helper.checkStringParam("companyName", companyName);
 
-        String roleID = Helper.generateID();
-        var sponsor = new Sponsor.Builder()
+        return new Sponsor.Builder()
                 .setRoleID(roleID)
                 .setTaxNumber(taxNumber)
                 .setCompanyName(companyName)
                 .build();
-
-        return sponsor;
     }
 }
