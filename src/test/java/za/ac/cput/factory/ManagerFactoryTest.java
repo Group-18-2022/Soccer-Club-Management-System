@@ -8,6 +8,7 @@ Group: 18
 
 package za.ac.cput.factory;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import za.ac.cput.entity.Manager;
 import za.ac.cput.entity.PersonalDetails;
@@ -17,12 +18,14 @@ import static org.junit.jupiter.api.Assertions.*;
 class ManagerFactoryTest
 {
     private static Manager manager = null;
+    private PersonalDetails p;
+    @BeforeEach
+    void setUp()
+    {p = PersonalDetailsFactory.createPersonalDetails("8204195647083", "Mondli", "Langa", null, null);}
 
     @Test
-    public static void createManagerTest()
+    public void createManagerTest()
     {
-        PersonalDetails p = PersonalDetailsFactory.createPersonalDetails("8204195647083", "Mondli", "Langa", null, null);
-
         manager = ManagerFactory.createManager("Belville FC", "Marketing Manager",5, p);
 
         assertNotNull(manager);
@@ -30,7 +33,7 @@ class ManagerFactoryTest
     }
 
     @Test
-    public static void idRequisiteTest()
+    public void idRequisiteTest()
     {
         manager = ManagerFactory.createManager("Belville FC", "Marketing Manager",5, null);
         //since the personal details are null, the manager should also be null

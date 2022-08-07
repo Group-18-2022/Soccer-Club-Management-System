@@ -19,17 +19,18 @@ class PlayerFactoryTest
     private static Player player = null;
 
     @Test
-    public static void createPlayerTest()
+    public void createPlayerTest()
     {
         PersonalDetails p = PersonalDetailsFactory.createPersonalDetails("8506115388084", "Pele","Zino",null, null);
         //we create a new PersonalDetails object because a Player is composed of PersonalDetails
-        player = PlayerFactory.createPlayer(4, null, "TeamA", p);
+        player = PlayerFactory.createPlayer(4, 0, "TeamA", p);
         //we use the object (p) as an attribute for Player.
         assertNotNull(player);
+        System.out.println(player);
     }
 
     @Test
-    public static void testIdRequisite()
+    public void testIdRequisite()
     {
         PersonalDetails p = PersonalDetailsFactory.createPersonalDetails(null, "Pele", "Zino", null, null);
 
