@@ -9,12 +9,10 @@ import za.ac.cput.util.Helper;
 
 
 public class ClubFactory {
-    public static Club createClub(String clubName,String clubOwner,boolean isRegisteredClub){
+    public static Club createClub(String clubID,String clubName,String clubOwner,boolean isRegisteredClub){
 
-        if(Helper.isEmptyOrNull(clubName) || Helper.isEmptyOrNull(clubOwner)) return null;
-        if(Helper.isEmptyOrNull(clubName) || Helper.isEmptyOrNull(clubOwner)) return null;
+        if(Helper.isEmptyOrNull(clubID)||Helper.isEmptyOrNull(clubName) || Helper.isEmptyOrNull(clubOwner)) return null;
 
-        String clubID = Helper.generateID();
         return new Club.ClubBuilder()
                 .setClubID(clubID)
                 .setClubName(clubName)

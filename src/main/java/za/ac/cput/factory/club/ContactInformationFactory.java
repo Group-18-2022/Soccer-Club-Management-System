@@ -9,12 +9,11 @@ import za.ac.cput.util.Helper;
 
 public class ContactInformationFactory {
 
-    public static ContactInformation createContactInfo(String streetNumber, String streetName, String Area,
+    public static ContactInformation createContactInfo(String contactID,String streetNumber, String streetName, String Area,
                                                        String City, int zipCode, String phoneNumber, String emailAddress)
     {
-        if (ValidationCheck(streetNumber, streetName, Area, City, zipCode, phoneNumber, emailAddress)) return null;
+        if (ValidationCheck(contactID,streetNumber, streetName, Area, City, zipCode, phoneNumber, emailAddress)) return null;
 
-        String contactID = Helper.generateID();
         return new ContactInformation.ContactInfoBuilder()
                 .setContactID(contactID)
                 .setStreetNumber(streetNumber)
@@ -27,8 +26,8 @@ public class ContactInformationFactory {
                 .build();
     }
 
-    private static boolean ValidationCheck(String streetNumber, String streetName, String Area, String City, int zipCode, String phoneNumber, String emailAddress) {
-        if(Helper.isEmptyOrNull(streetName)|| Helper.isEmptyOrNull(streetNumber)|| Helper.isEmptyOrNull(Area)
+    private static boolean ValidationCheck(String contactID,String streetNumber, String streetName, String Area, String City, int zipCode, String phoneNumber, String emailAddress) {
+        if(Helper.isEmptyOrNull(contactID)||Helper.isEmptyOrNull(streetName)|| Helper.isEmptyOrNull(streetNumber)|| Helper.isEmptyOrNull(Area)
                 || Helper.isEmptyOrNull(City) || zipCode == 0 || Helper.isEmptyOrNull(phoneNumber)) return true;
 
         if(!Helper.isValidEmail(emailAddress)) return true;
