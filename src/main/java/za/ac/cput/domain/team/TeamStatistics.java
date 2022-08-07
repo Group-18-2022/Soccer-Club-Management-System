@@ -4,12 +4,20 @@
  * @author Mike Somelezo Tyolani (220187568)
  * 04 April 2022
  */
-package za.ac.cput.domain;
+package za.ac.cput.domain.team;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+
+@Entity
 public class TeamStatistics {
     //Team statistics attributes
+    @Id @NotNull
     private String teamId;
+    @NotNull
     private String  trophiesWon;
+    @NotNull
     private String matchesPlayed;
 
     //private constructor
@@ -18,6 +26,8 @@ public class TeamStatistics {
         this.trophiesWon = builder.trophiesWon;
         this.matchesPlayed = builder.matchesPlayed;
     }
+
+    protected TeamStatistics () {}
 
     //Getters
 
