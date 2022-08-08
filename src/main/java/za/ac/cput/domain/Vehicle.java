@@ -6,10 +6,21 @@ package za.ac.cput.domain;
    Date: 08/04/2022
  */
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+import java.util.Objects;
+
+@Entity
 public class Vehicle {
+    @NotNull
+    @Id
     private String vinNumber;
+    @NotNull
     private String modelType;
+    @NotNull
     private String modelName;
+    @NotNull
     private String capacity;
 
     private Vehicle(Builder builder) {
@@ -81,6 +92,19 @@ public class Vehicle {
 
         public Vehicle build() {
             return new Vehicle(this);
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (!(o instanceof Builder)) return false;
+            Builder builder = (Builder) o;
+            return vinNumber.equals(builder.vinNumber) && modelType.equals(builder.modelType) && modelName.equals(builder.modelName) && capacity.equals(builder.capacity);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(vinNumber, modelType, modelName, capacity);
         }
     }
 }

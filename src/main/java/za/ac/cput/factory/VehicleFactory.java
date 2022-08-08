@@ -12,17 +12,16 @@ import za.ac.cput.util.Helper;
 public class VehicleFactory {
 
     public static Vehicle createVehicle(String vinNumber, String modelType, String modelName, String capacity) {
-//        if(Helper.isNull(vinNumber) || Helper.isNull(modelType) || Helper.isNull(modelName) || Helper.isNull(capacity) ||
-//            Helper.isEmpty(vinNumber) || Helper.isEmpty(modelType) || Helper.isEmpty(modelName) || Helper.isEmpty(capacity))
-//            throw new IllegalStateException("Invalid values");
+        Helper.checkStringParam("vinNumber", vinNumber);
+        Helper.checkStringParam("modelType", modelType);
+        Helper.checkStringParam("modelName", modelName);
+        Helper.checkStringParam("capacity", capacity);
 
-        var vehicle = new Vehicle.Builder()
+        return new Vehicle.Builder()
                 .setVinNumber(vinNumber)
                 .setModelType(modelType)
                 .setModelName(modelName)
                 .setCapacity(capacity)
                 .build();
-
-        return vehicle;
     }
 }
