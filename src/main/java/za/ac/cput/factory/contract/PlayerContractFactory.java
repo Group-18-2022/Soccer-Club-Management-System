@@ -1,3 +1,9 @@
+/*
+Mponenge Ratego
+216178991
+Assignment 1
+ */
+
 package za.ac.cput.factory.contract;
 
 import za.ac.cput.domain.contract.Contract;
