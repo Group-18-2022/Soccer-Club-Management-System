@@ -13,8 +13,7 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
 @Entity
-public class Contract
-{
+public class Contract {
     @NotNull
     private String signedDate;
 
@@ -31,50 +30,47 @@ public class Contract
     private String duration;
 
 
-    protected Contract()
-    {
+    protected Contract() {
     }
 
-    private Contract (Builder builder) {
+    private Contract(Builder builder) {
         this.signedDate = builder.signedDate;
         this.expDate = builder.expDate;
         this.signedLocation = builder.signedLocation;
-        this. witness= builder. witness;
+        this.witness = builder.witness;
         this.duration = builder.duration;
 
     }
 
-    public String getSignedDate(){
+    public String getSignedDate() {
         return signedDate;
     }
 
-    public int getExpDate(){
+    public String getExpDate() {
         return expDate;
     }
 
-    public int getSignedLocation(){
+    public String getSignedLocation() {
         return signedLocation;
     }
 
-    public PersonalDetails getWitness(){
+    public PersonalDetails getWitness() {
         return witness;
     }
 
-    public String getDuration(){
+    public String getDuration() {
         return duration;
     }
-
 
 
     @Override
     public String toString() {
         return "Contract{" +
-                "SignedDate='" + signedDate '\'' +
-                ", ExpDate='" + expDate '\'' +
-                ", SignedLocation='" + signedLocation'\'' +
-                ", Witness='" + witness'\'' +
-                ", Duration='" + duration'\''
-                + '\'' +
+                "SignedDate:" + signedDate +
+                ", ExpDate:'" + expDate + '\'' +
+                ", SignedLocation:'" + signedLocation + '\'' +
+                ", Witness:'" + witness + '\'' +
+                ", Duration:" + duration +
                 '}';
     }
 
@@ -91,32 +87,30 @@ public class Contract
         private String duration;
 
 
-
-        public Builder setSignedDate(String signedDate){
+        public Builder setSignedDate(String signedDate) {
             this.signedDate = signedDate;
             return this;
         }
 
-        public Builder setExpDate(String expDate){
+        public Builder setExpDate(String expDate) {
             this.expDate = expDate;
             return this;
         }
 
-        public Builder setSignedLocation(String signedLocation){
+        public Builder setSignedLocation(String signedLocation) {
             this.signedLocation = signedLocation;
             return this;
         }
 
-        public Builder setWitness(PersonalDetails witness){
-            this.witness= witness;
+        public Builder setWitness(PersonalDetails witness) {
+            this.witness = witness;
             return this;
         }
 
-        public Builder setDuration(String duration){
-            this.duration= duration;
+        public Builder setDuration(String duration) {
+            this.duration = duration;
             return this;
         }
-
 
 
         public Builder copy(Contract contract) {
@@ -127,7 +121,6 @@ public class Contract
             this.duration = contract.duration;
 
 
-
             return this;
         }
 
@@ -136,3 +129,4 @@ public class Contract
         }
 
     }
+}

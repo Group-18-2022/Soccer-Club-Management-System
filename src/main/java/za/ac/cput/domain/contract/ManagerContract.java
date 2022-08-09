@@ -13,8 +13,7 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
 @Entity
-public class ManagerContract
-{
+public class ManagerContract {
     @NotNull
     @Id
     private String contractId;
@@ -28,11 +27,10 @@ public class ManagerContract
     @NotNull
     private Contract contract;
 
-    protected ManagerContract()
-    {
+    protected ManagerContract() {
     }
 
-    private ManagerContract (Builder builder) {
+    private ManagerContract(Builder builder) {
         this.contractId = builder.contractId;
         this.milestonesOnTime = builder.milestonesOnTime;
         this.numberOfGrievances = builder.numberOfGrievances;
@@ -40,32 +38,30 @@ public class ManagerContract
 
     }
 
-    public String getContractId(){
+    public String getContractId() {
         return contractId;
     }
 
-    public String getMilestonesOnTime(){
+    public String getMilestonesOnTime() {
         return milestonesOnTime;
     }
 
-    public int getNumberOfGrievances(){
+    public int getNumberOfGrievances() {
         return numberOfGrievances;
     }
 
-    public Contract getContract(){
+    public Contract getContract() {
         return contract;
     }
-
 
 
     @Override
     public String toString() {
         return "ManagerContract{" +
-                "ContractId='" + contractId '\'' +
-                ", MilestonesOnTime='" + milestonesOnTime '\'' +
-                ", NumberOfGrievances='" + numberOfGrievances '\'' +
-                ", Contract='" + contract'\''
-                + '\'' +
+                "ContractId:" + contractId +
+                ", MilestonesOnTime:'" + milestonesOnTime + '\'' +
+                ", NumberOfGrievances:'" + numberOfGrievances + '\'' +
+                ", Contract:" + contract +
                 '}';
     }
 
@@ -76,27 +72,25 @@ public class ManagerContract
         private Contract contract;
 
 
-
-        public Builder setContractId(String contractId){
+        public Builder setContractId(String contractId) {
             this.contractId = contractId;
             return this;
         }
 
-        public Builder setMilestonesOnTime(String milestonesOnTime){
+        public Builder setMilestonesOnTime(String milestonesOnTime) {
             this.milestonesOnTime = milestonesOnTime;
             return this;
         }
 
-        public Builder setNumberOfGrievances(int numberOfGrievances){
+        public Builder setNumberOfGrievances(int numberOfGrievances) {
             this.numberOfGrievances = numberOfGrievances;
             return this;
         }
 
-        public Builder setContract(Contract contract){
+        public Builder setContract(Contract contract) {
             this.contract = contract;
             return this;
         }
-
 
 
         public Builder copy(ManagerContract managerContract) {
@@ -106,7 +100,6 @@ public class ManagerContract
             this.contract = managerContract.contract;
 
 
-
             return this;
         }
 
@@ -114,4 +107,5 @@ public class ManagerContract
             return new ManagerContract(this);
         }
 
+    }
 }

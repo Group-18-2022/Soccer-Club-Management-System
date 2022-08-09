@@ -13,8 +13,7 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
 @Entity
-public class PlayerContract
-{
+public class PlayerContract {
     @NotNull
     @Id
     private String contractId;
@@ -28,11 +27,10 @@ public class PlayerContract
     @NotNull
     private Contract contract;
 
-    protected PlayerContract()
-    {
+    protected PlayerContract() {
     }
 
-    private PlayerContract (Builder builder) {
+    private PlayerContract(Builder builder) {
         this.contractId = builder.contractId;
         this.goalTarget = builder.goalTarget;
         this.matchesPlayed = builder.matchesPlayed;
@@ -40,32 +38,30 @@ public class PlayerContract
 
     }
 
-    public String getContractId(){
+    public String getContractId() {
         return contractId;
     }
 
-    public int getGoalTarget(){
+    public int getGoalTarget() {
         return goalTarget;
     }
 
-    public int getMatchesPlayed(){
+    public int getMatchesPlayed() {
         return matchesPlayed;
     }
 
-    public Contract getContract(){
+    public Contract getContract() {
         return contract;
     }
 
 
-
     @Override
     public String toString() {
-        return "PlayerContract{" +
-                "ContractId='" + contractId '\'' +
-                ", GoalTarget='" + goalTarget '\'' +
-                ", MatchesPlayed='" + matchesPlayed'\'' +
-                ", Contract='" + contract'\''
-                + '\'' +
+        return "ManagerContract{" +
+                "ContractId:" + contractId +
+                ", GoalTarget:'" + goalTarget + '\'' +
+                ", MatchesPlayed:'" + matchesPlayed + '\'' +
+                ", Contract:" + contract +
                 '}';
     }
 
@@ -76,27 +72,25 @@ public class PlayerContract
         private Contract contract;
 
 
-
-        public Builder setContractId(String contractId){
+        public Builder setContractId(String contractId) {
             this.contractId = contractId;
             return this;
         }
 
-        public Builder setGoalTarget(int goalTarget){
+        public Builder setGoalTarget(int goalTarget) {
             this.goalTarget = goalTarget;
             return this;
         }
 
-        public Builder setMatchesPlayed(int matchesPlayed){
+        public Builder setMatchesPlayed(int matchesPlayed) {
             this.matchesPlayed = matchesPlayed;
             return this;
         }
 
-        public Builder setContract(Contract contract){
+        public Builder setContract(Contract contract) {
             this.contract = contract;
             return this;
         }
-
 
 
         public Builder copy(PlayerContract playerContract) {
@@ -104,7 +98,6 @@ public class PlayerContract
             this.goalTarget = playerContract.goalTarget;
             this.matchesPlayed = playerContract.matchesPlayed;
             this.contract = playerContract.contract;
-
 
 
             return this;
@@ -115,3 +108,4 @@ public class PlayerContract
         }
 
     }
+}
