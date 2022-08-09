@@ -10,11 +10,11 @@ public class ManagerContractFactory {
 
         if(Helper.isEmptyOrNull(contractId)||Helper.isEmptyOrNull(milestonesOnTime)) return null;
 
-        return new ManagerContract.ManagerContractBuilder()
-                .setClubID(contractId)
-                .setClubName(milestonesOnTime)
-                .setClubOwner(numberOfGrievance)
-                .setRegisteredClub(isRegisteredClub)
+        return new ManagerContract.Builder()
+                .setContractId(contractId)
+                .setMilestonesOnTime(milestonesOnTime)
+                .setNumberOfGrievances(numberOfGrievances)
+                .setContract(contract)
                 .build();
     }
 }
