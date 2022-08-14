@@ -4,8 +4,9 @@ import za.ac.cput.domain.contract.PlayerContract;
 
 import java.util.List;
 import java.util.Optional;
+import za.ac.cput.service.IService;
 
-public interface PlayerContractService {
+public interface PlayerContractService  extends IService<PlayerContract, String> {
     PlayerContract save(PlayerContract playerContract);
 
     Optional<PlayerContract> read(String id);
