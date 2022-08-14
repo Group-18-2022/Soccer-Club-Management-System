@@ -12,8 +12,19 @@ public class ContactInformationFactory {
     public static ContactInformation createContactInfo(String contactID,String streetNumber, String streetName, String Area,
                                                        String City, int zipCode, String phoneNumber, String emailAddress)
     {
-        if (ValidationCheck(contactID,streetNumber, streetName, Area, City, zipCode, phoneNumber, emailAddress)) return null;
 
+        if(zipCode <= 0 || zipCode <=999){
+            throw new IllegalArgumentException(
+                    String.format("Invalid value for params: %s", zipCode)
+            );
+        }
+        Helper.checkStringParam("Contact Id",contactID);
+        Helper.checkStringParam("Street Number",streetNumber);
+        Helper.checkStringParam("Street Name",streetName);
+        Helper.checkStringParam("Area",Area);
+        Helper.checkStringParam("City",City);
+        Helper.checkStringParam("Phone Number",phoneNumber);
+        Helper.isValidEmail(emailAddress);
         return new ContactInformation.ContactInfoBuilder()
                 .setContactID(contactID)
                 .setStreetNumber(streetNumber)
@@ -24,14 +35,6 @@ public class ContactInformationFactory {
                 .setPhoneNumber(phoneNumber)
                 .setEmailAddress(emailAddress)
                 .build();
-    }
-
-    private static boolean ValidationCheck(String contactID,String streetNumber, String streetName, String Area, String City, int zipCode, String phoneNumber, String emailAddress) {
-        if(Helper.isEmptyOrNull(contactID)||Helper.isEmptyOrNull(streetName)|| Helper.isEmptyOrNull(streetNumber)|| Helper.isEmptyOrNull(Area)
-                || Helper.isEmptyOrNull(City) || zipCode == 0 || Helper.isEmptyOrNull(phoneNumber)) return true;
-
-        if(!Helper.isValidEmail(emailAddress)) return true;
-        return false;
     }
 
 }
