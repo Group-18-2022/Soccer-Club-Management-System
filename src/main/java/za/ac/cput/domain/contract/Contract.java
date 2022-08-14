@@ -7,12 +7,13 @@ Assignment 1
 package za.ac.cput.domain.contract;
 
 import za.ac.cput.domain.lookup.PersonalDetails;
-import javax.persistence.Embedded;
+
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
-@Entity
+@Embeddable
 public class Contract {
     @NotNull
     private String signedDate;
