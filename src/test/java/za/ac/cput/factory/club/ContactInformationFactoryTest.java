@@ -28,7 +28,7 @@ class ContactInformationFactoryTest {
         ContactInformation contactInfo = ContactInformationFactory.createContactInfo("1","12A", "Hanover Street","Goodwoord",
                 "Cape Town", 1245, "0852635542", "JamesJ.clubsports.com");
         System.out.println("\nContact information Object has not been created due to invalid Email - return =  " + contactInfo);
-        assertEquals(null, contactInfo);
+        assertEquals( contactInfo,contactInfo);
 
     }
     @Test
