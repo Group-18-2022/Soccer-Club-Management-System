@@ -16,5 +16,5 @@ public interface ManagerContractService  extends IService<ManagerContract, Strin
     void delete(ManagerContract managerContract);
 
 
-    List<ManagerContract> findAllManagerContract();
+    List<ManagerContract> findAll();
 }
