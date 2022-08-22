@@ -40,7 +40,7 @@ public class ManagerContractServiceImpl implements ManagerContractService {
 
 
     @Override
-    public List<ManagerContract> findAllManagerContract() {
+    public List<ManagerContract> findAll() {
         return this.managerContractReposi.findAll();
     }
 

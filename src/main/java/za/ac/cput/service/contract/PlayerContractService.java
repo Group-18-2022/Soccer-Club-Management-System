@@ -15,5 +15,6 @@ public interface PlayerContractService  extends IService<PlayerContract, String>
 
     void delete(PlayerContract playerContract);
 
-    List<PlayerContract> findAllPlayerContract();
+
+    List<PlayerContract> findAll();
 }
