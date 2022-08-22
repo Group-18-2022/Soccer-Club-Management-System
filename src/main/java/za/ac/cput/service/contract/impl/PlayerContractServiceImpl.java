@@ -39,7 +39,7 @@ public class PlayerContractServiceImpl implements PlayerContractService  {
     }
 
     @Override
-    public List<PlayerContract> findAllPlayerContract() {
+    public List<PlayerContract> findAll() {
         return this.playerContractReposi.findAll();
     }
 
