@@ -10,3 +10,8 @@ spring:
     url: jdbc:mysql://localhost:3306/soccer-club-db?createDatabaseIfNotExist=true
     username: root
     password: password
+
+  security:
+    user:
+      name: "Test User"
+      password: "123456"
