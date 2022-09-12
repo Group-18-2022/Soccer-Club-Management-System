@@ -45,4 +45,28 @@ class VehicleFactoryTest {
     void testCapacity() {
         assertEquals("50", vehicle.getCapacity());
     }
+
+    @Test
+    public void testVehicleFactoryForNull() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            VehicleFactory.createVehicle(null, null, null, null);
+        });
+
+        String expectedMessage = "Invalid value for params: vehicleID";
+        String actualMessage = exception.getMessage();
+
+        assertTrue(actualMessage.contains(expectedMessage));
+    }
+
+    @Test
+    public void testVehicleFactoryForEmptyString() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            VehicleFactory.createVehicle("", "", "", "");
+        });
+
+        String expectedMessage = "Invalid value for params: vehicleID";
+        String actualMessage = exception.getMessage();
+
+        assertTrue(actualMessage.contains(expectedMessage));
+    }
 }

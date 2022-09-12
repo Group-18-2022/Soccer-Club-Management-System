@@ -14,28 +14,43 @@ import za.ac.cput.factory.team.TeamFactory;
 import static org.junit.jupiter.api.Assertions.*;
 
 class TeamFactoryTest {
-    Team team;
-    Team newTeam;
+    private Team team;
 
     @BeforeEach
     void setUp() {
-        team = TeamFactory.createTeam("Super Strikers", "20", "30");
-        newTeam = TeamFactory.createTeam("Super Strikers", "30", "38");
+        team = TeamFactory.build("team-Id", "team-name", "number-of-players", "max-Number-Of-Players");
     }
 
     @Test
-    public void testTeamFactoryNotNull() {
-        System.out.println(team.toString());
-        assertNotNull(team);
+    public void testTeamCreation() {
+        assertAll(
+                () -> assertNotNull(team),
+                () -> assertNotNull(team.getTeamId()),
+                () -> assertEquals("team-name", team.getTeamName())
+        );
     }
     @Test
-    public void testTeamSame() {
-        assertSame(team.getTeamName(), newTeam.getTeamName());
+    public void testTeamIdForEmptyString() {
+       Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+           TeamFactory.build("","team-name","number-of-players","max-Number-Of-Players");
+       });
+
+       String expectedMessage = "Invalid value for params: teamId";
+       String actualMessage = exception.getMessage();
+
+       assertTrue(actualMessage.contains(expectedMessage));
     }
 
     @Test
-    public void testTeamNotSame() {
-        assertNotSame(team, newTeam);
+    public void testTeamForNull() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            TeamFactory.build(null,null,null,null);
+        });
+
+        String expectedMessage = "Invalid value for params: Team";
+        String actualMessage = exception.getMessage();
+
+        assertTrue(actualMessage.contains(expectedMessage));
     }
 
 

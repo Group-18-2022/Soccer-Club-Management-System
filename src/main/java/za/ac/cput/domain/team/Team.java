@@ -7,12 +7,18 @@
 
 package za.ac.cput.domain.team;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+
+@Entity
 public class Team {
     //team attributes
+    @Id
+    @NotNull
     private String teamId;
-    private String teamName;
-    private String numberOfPlayers;
-    private String maxNumberOfPlayers;
+    @NotNull
+    private String teamName,numberOfPlayers, maxNumberOfPlayers;
 
 
     //private constructor
@@ -22,6 +28,8 @@ public class Team {
         this.numberOfPlayers = builder.numberOfPlayers;
         this.maxNumberOfPlayers = builder.maxNumberOfPlayers;
     }
+
+    protected Team () {}
 
     //Getters
     public String getTeamId() {

@@ -12,15 +12,38 @@ and other soccer player-specific attributes.
 
 package za.ac.cput.domain.entity;
 
-import za.ac.cput.domain.PersonalDetails;
+import za.ac.cput.domain.lookup.PersonalDetails;
 
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+
+@Entity
 public class Player
 {
+    @NotNull
+    @Id
+    private String empNumber;
+    @NotNull
     private int fieldPosition;
+    @NotNull
     private int jerseyNumber;
+    @NotNull
     private String teamId;
+    @Embedded
+    @NotNull
     PersonalDetails personalDetails;
 
+    public void setPersonalDetails(PersonalDetails personalDetails) {
+        this.personalDetails = personalDetails;
+    }
+
+    protected Player()
+    {
+    }
+
+    public String getEmpNumber(){return empNumber;}
     public int getFieldPosition() {
         return fieldPosition;
     }
@@ -39,6 +62,7 @@ public class Player
 
     private Player(Builder builder)
     {
+        this.empNumber = builder.empNumber;
         this.fieldPosition = builder.fieldPosition;
         this.jerseyNumber = builder.jerseyNumber;
         this.teamId = builder.teamId;
@@ -56,11 +80,18 @@ public class Player
 
     public static class Builder
     {
+        private String empNumber;
         private int fieldPosition;
         private int jerseyNumber;
         private String teamId;
         PersonalDetails personalDetails;
 
+        public Builder setEmpNumber(String empNumber)
+        {
+            this.empNumber = empNumber;
+            this.empNumber = empNumber;
+            return this;
+        }
         public Builder setFieldPosition(int fieldPosition) {
             this.fieldPosition = fieldPosition;
             return this;

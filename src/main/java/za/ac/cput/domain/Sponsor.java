@@ -6,9 +6,19 @@ package za.ac.cput.domain;
    Date: 08/04/2022
  */
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+import java.util.Objects;
+
+@Entity
 public class Sponsor {
+    @NotNull
+    @Id
     private String roleID;
+    @NotNull
     private String taxNumber;
+    @NotNull
     private String companyName;
 
     private Sponsor(Sponsor.Builder builder) {
@@ -67,6 +77,19 @@ public class Sponsor {
 
         public Sponsor build() {
             return new Sponsor(this);
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (!(o instanceof Builder)) return false;
+            Builder builder = (Builder) o;
+            return roleID.equals(builder.roleID) && taxNumber.equals(builder.taxNumber) && companyName.equals(builder.companyName);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(roleID, taxNumber, companyName);
         }
     }
 }
