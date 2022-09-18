@@ -10,7 +10,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import za.ac.cput.domain.contract.Contract;
 
-
+/*
 @Repository
 public interface ContractRepository extends JpaRepository<Contract, String> {
 }
+
+
+No repository for this class as it is a value object with no individual identifier
+ */

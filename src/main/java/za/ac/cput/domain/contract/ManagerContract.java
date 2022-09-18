@@ -24,8 +24,14 @@ public class ManagerContract {
     @NotNull
     private int numberOfGrievances;
 
+    @Embedded
     @NotNull
+
     private Contract contract;
+
+    public void setContract(Contract contract) {
+        this.contract = contract;
+    }
 
     protected ManagerContract() {
     }

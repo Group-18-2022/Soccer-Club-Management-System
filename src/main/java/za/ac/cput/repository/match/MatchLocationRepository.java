@@ -2,7 +2,7 @@ package za.ac.cput.repository.match;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import za.ac.cput.domain.lookup.MatchLocation;
+import za.ac.cput.domain.match.MatchLocation;
 
 /*
  * @author Karl Haupt (220236585)

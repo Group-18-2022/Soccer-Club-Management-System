@@ -24,8 +24,13 @@ public class PlayerContract {
     @NotNull
     private int matchesPlayed;
 
+    @Embedded
     @NotNull
     private Contract contract;
+
+    public void setContract(Contract contract) {
+        this.contract = contract;
+    }
 
     protected PlayerContract() {
     }

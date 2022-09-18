@@ -5,7 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import za.ac.cput.domain.lookup.MatchLocation;
+import za.ac.cput.domain.match.MatchLocation;
 import za.ac.cput.domain.match.SoccerMatch;
 import za.ac.cput.factory.match.LocationFactory;
 import za.ac.cput.factory.match.MatchFactory;
