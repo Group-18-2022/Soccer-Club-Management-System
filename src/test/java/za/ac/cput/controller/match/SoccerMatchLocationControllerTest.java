@@ -7,7 +7,7 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import za.ac.cput.domain.lookup.MatchLocation;
+import za.ac.cput.domain.match.MatchLocation;
 import za.ac.cput.factory.match.LocationFactory;
 import za.ac.cput.factory.match.MatchFactory;
 import za.ac.cput.factory.match.MatchLocationFactory;

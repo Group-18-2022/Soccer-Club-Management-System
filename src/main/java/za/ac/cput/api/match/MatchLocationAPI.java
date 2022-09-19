@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ResponseStatusException;
-import za.ac.cput.domain.lookup.MatchLocation;
+import za.ac.cput.domain.match.MatchLocation;
 import za.ac.cput.service.match.impl.LocationServiceImpl;
 import za.ac.cput.service.match.impl.MatchLocationServiceImpl;
 import za.ac.cput.service.match.impl.MatchServiceImpl;

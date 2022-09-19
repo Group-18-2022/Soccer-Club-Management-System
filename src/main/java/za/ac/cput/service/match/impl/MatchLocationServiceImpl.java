@@ -7,7 +7,7 @@ package za.ac.cput.service.match.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import za.ac.cput.domain.lookup.MatchLocation;
+import za.ac.cput.domain.match.MatchLocation;
 import za.ac.cput.repository.match.MatchLocationRepository;
 import za.ac.cput.service.match.MatchLocationService;
 

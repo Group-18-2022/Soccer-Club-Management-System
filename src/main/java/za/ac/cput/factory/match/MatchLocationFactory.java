@@ -1,6 +1,6 @@
 package za.ac.cput.factory.match;
 
-import za.ac.cput.domain.lookup.MatchLocation;
+import za.ac.cput.domain.match.MatchLocation;
 import za.ac.cput.util.Helper;
 
 /*

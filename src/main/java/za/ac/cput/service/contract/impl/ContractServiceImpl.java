@@ -1,3 +1,4 @@
+/*
 package za.ac.cput.service.contract.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,3 +44,6 @@ public class ContractServiceImpl implements ContractService {
     }
 
 }
+
+NO service for this class as it is a value object
+ */

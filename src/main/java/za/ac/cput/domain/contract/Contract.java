@@ -9,6 +9,7 @@ package za.ac.cput.domain.contract;
 import za.ac.cput.domain.lookup.PersonalDetails;
 
 import javax.persistence.Embeddable;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
@@ -24,11 +25,16 @@ public class Contract {
     @NotNull
     private String signedLocation;
 
+    @Embedded
     @NotNull
     private PersonalDetails witness;
 
     @NotNull
     private String duration;
+
+    public void setWitness(PersonalDetails witness) {
+        this.witness = witness;
+    }
 
 
     protected Contract() {

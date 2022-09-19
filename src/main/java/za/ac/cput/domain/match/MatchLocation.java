@@ -1,4 +1,4 @@
-package za.ac.cput.domain.lookup;
+package za.ac.cput.domain.match;
 
 /*
  * @author Karl Haupt (220236585)

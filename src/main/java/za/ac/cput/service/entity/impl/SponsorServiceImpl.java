@@ -7,6 +7,7 @@ package za.ac.cput.service.entity.impl;
  */
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import za.ac.cput.domain.Sponsor;
 import za.ac.cput.repository.entity.SponsorRepository;
 import za.ac.cput.service.entity.SponsorService;
@@ -14,6 +15,8 @@ import za.ac.cput.service.entity.SponsorService;
 import java.util.List;
 import java.util.Optional;
 
+
+@Service
 public class SponsorServiceImpl implements SponsorService {
     private SponsorRepository repository;
 
