@@ -16,7 +16,7 @@ import java.util.List;
  * @author Charles Moses Lemmert (220498385)
  * **/
 @RestController
-@RequestMapping("api/v1/soccer-management/ContactInformation/")
+@RequestMapping("api/v1/soccer-management/contactinformation/")
 public class ContactInfoController {
 
     private final ContactInfoServiceImpl contactService;

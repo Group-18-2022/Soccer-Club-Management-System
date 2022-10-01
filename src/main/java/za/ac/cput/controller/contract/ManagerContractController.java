@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("soccer-management/managerContract/")
+@RequestMapping("api/v1/soccer-management/managerContract/")
 @Slf4j
 public class ManagerContractController  {
 
