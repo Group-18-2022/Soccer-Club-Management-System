@@ -19,7 +19,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/v1/soccer-management/Vehicle/")
+@RequestMapping("api/v1/soccer-management/vehicle/")
 public class VehicleController {
     private final VehicleServiceImpl vehicleService;
 
