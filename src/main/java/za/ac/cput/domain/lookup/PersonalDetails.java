@@ -26,7 +26,7 @@ public class PersonalDetails
     @NotNull
     private String surname;
     @NotNull
-    private LocalDate dateOfBirth;
+    private String dateOfBirth;
     @OneToOne
     @NotNull
     private ContactInformation contactDetails;
@@ -46,12 +46,24 @@ public class PersonalDetails
         return surname;
     }
 
-    public LocalDate getDateOfBirth() {
+    public String getDateOfBirth() {
         return dateOfBirth;
     }
 
     public ContactInformation getContactDetails() {
         return contactDetails;
+    }
+
+
+    @Override
+    public String toString() {
+        return "PersonalDetails{" +
+                "idNumber='" + idNumber + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", surname='" + surname + '\'' +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
+                ", contactDetails=" + contactDetails +
+                '}';
     }
 
     private PersonalDetails(Builder builder)
@@ -67,7 +79,7 @@ public class PersonalDetails
         private String idNumber;
         private String firstName;
         private String surname;
-        private LocalDate dateOfBirth;
+        private String dateOfBirth;
         private ContactInformation contactDetails;
 
         public Builder setIdNumber(String idNumber)
@@ -88,7 +100,7 @@ public class PersonalDetails
             return this;
         }
 
-        public Builder setDateOfBirth(LocalDate dateOfBirth)
+        public Builder setDateOfBirth(String dateOfBirth)
         {
             this.dateOfBirth = dateOfBirth;
             return  this;
