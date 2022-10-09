@@ -17,7 +17,7 @@ import java.util.List;
  * @author Charles Moses Lemmert (220498385)
  * **/
 @RestController
-@RequestMapping("api/v1/soccer-management/Club/")
+@RequestMapping("api/v1/soccer-management/club/")
 public class ClubController {
 
     private final ClubServiceImpl clubService;

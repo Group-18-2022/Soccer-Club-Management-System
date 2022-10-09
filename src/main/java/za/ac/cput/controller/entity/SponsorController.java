@@ -19,7 +19,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/v1/soccer-management/Sponsor/")
+@RequestMapping("api/v1/soccer-management/sponsor/")
 public class SponsorController {
     private final SponsorServiceImpl sponsorService;
 
