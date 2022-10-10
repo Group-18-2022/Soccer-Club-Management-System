@@ -23,7 +23,7 @@ class PersonalDetailsFactoryTest
     {
 
         newPerson = PersonalDetailsFactory
-                .createPersonalDetails("8906129383084", "General", "Ngcobo", null, null);
+                .createPersonalDetails("8906129383084", "General", "Ngcobo", "12 Aug 1993", null);
 
         assertNotNull(newPerson);
     }

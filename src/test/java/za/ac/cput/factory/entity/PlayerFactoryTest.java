@@ -35,7 +35,7 @@ class PlayerFactoryTest
     {
         PersonalDetails p = PersonalDetailsFactory.createPersonalDetails(null, "Pele", "Zino", null, null);
 
-        player = PlayerFactory.createPlayer("00001",4, null, "TeamA", p);
+        player = PlayerFactory.createPlayer("00001",4, 76, "TeamA", p);
 
         assertNull(player);
     }
