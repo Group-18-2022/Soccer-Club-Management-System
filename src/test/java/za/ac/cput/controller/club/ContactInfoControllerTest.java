@@ -35,7 +35,7 @@ class ContactInfoControllerTest {
         this.contactInformation = ContactInformationFactory.createContactInfo(
                 "1","12A", "Hanover Street","Goodwoord",
                 "Cape Town", 1245, "0852635542", "JamesJ@clubsports.com");
-        this.contactURL = "http://localhost:" + this.localPort + "/api/v1/soccer-management/ContactInformation/";
+        this.contactURL = "http://localhost:" + this.localPort + "/api/v1/soccer-management/contactinformation/";
     }
 
     @Test
@@ -46,7 +46,7 @@ class ContactInfoControllerTest {
                 url, this.contactInformation, ContactInformation.class);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, saveResponse.getStatusCode()),
-                () -> assertNotEquals(null,saveResponse)
+                () -> assertNotNull(saveResponse.getBody())
         );
     }
 
