@@ -52,7 +52,7 @@ class SoccerMatchScoreControllerTest {
 
     @Test @Order(2)
     void read() {
-        String url = baseURL + "read/" + this.matchScore.getMatchID();
+        String url = baseURL + "read/" + this.matchScore.getMatchId();
         ResponseEntity<MatchScore> response = this.restTemplate.getForEntity(url, MatchScore.class);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
@@ -62,7 +62,7 @@ class SoccerMatchScoreControllerTest {
 
     @Test @Order(3)
     void deleteById() {
-        String url = baseURL + "delete/" + this.matchScore.getMatchID();
+        String url = baseURL + "delete/" + this.matchScore.getMatchId();
         this.restTemplate.delete(url);
     }
 

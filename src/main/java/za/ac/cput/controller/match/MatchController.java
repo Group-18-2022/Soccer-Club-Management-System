@@ -10,9 +10,11 @@ import za.ac.cput.factory.match.MatchFactory;
 import za.ac.cput.service.match.impl.MatchServiceImpl;
 
 import javax.validation.Valid;
+import java.sql.SQLOutput;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000", maxAge = 3600)
 @RequestMapping("api/v1/soccer-management/match/")
 public class MatchController {
     private final MatchServiceImpl matchService;
@@ -41,9 +43,9 @@ public class MatchController {
     }
 
     @DeleteMapping("delete/{id}")
-    public ResponseEntity<Void> deleteById(@PathVariable String id) {
+    public ResponseEntity<Boolean> deleteById(@PathVariable String id) {
         this.matchService.deleteById(id);
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.ok(true);
     }
 
     @GetMapping("all")

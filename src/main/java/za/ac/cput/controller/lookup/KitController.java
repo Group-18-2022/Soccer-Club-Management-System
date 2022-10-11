@@ -13,6 +13,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000", maxAge = 3600)
 @RequestMapping("api/v1/soccer-management/kit/")
 public class KitController {
     private final KitServiceImpl kitService;
@@ -41,9 +42,9 @@ public class KitController {
     }
 
     @DeleteMapping("delete/{id}")
-    public ResponseEntity<Void> deleteById(@PathVariable String id) {
+    public ResponseEntity<Boolean> deleteById(@PathVariable String id) {
         this.kitService.deleteById(id);
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.ok(true);
     }
 
     @GetMapping("all")
