@@ -21,7 +21,7 @@ class SoccerMatchScoreTest {
         opponentScore = 2;
         teamScore = 3;
         matchScore = new MatchScore.Builder()
-                .setMatchID("1")
+                .setMatchId("1")
                 .setOpponentScore(opponentScore)
                 .setTeamScore(teamScore)
                 .build();
@@ -34,7 +34,7 @@ class SoccerMatchScoreTest {
 
     @Test
     public void testMatchIDValue() {
-        assertEquals("1", matchScore.getMatchID());
+        assertEquals("1", matchScore.getMatchId());
     }
 
     @Test

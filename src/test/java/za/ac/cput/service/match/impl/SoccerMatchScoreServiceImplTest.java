@@ -35,7 +35,7 @@ class SoccerMatchScoreServiceImplTest {
 
     @Test
     void read() {
-        Optional<MatchScore> read = this.service.read(matchScore.getMatchID());
+        Optional<MatchScore> read = this.service.read(matchScore.getMatchId());
         assertAll(
                 () -> assertTrue(read.isPresent()),
                 () -> assertEquals(matchScore, read.get())
@@ -50,7 +50,7 @@ class SoccerMatchScoreServiceImplTest {
 
     @Test
     void deleteById() {
-        this.service.deleteById(matchScore.getMatchID());
+        this.service.deleteById(matchScore.getMatchId());
         List<MatchScore> scores = this.service.findAll();
         assertAll(
                 () -> assertEquals(0, scores.size())

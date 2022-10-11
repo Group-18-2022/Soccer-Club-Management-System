@@ -14,20 +14,20 @@ import java.util.Objects;
 public class MatchScore {
     @NotNull
     @Id
-    private String matchID;
+    private String matchId;
     @NotNull
     private byte opponentScore, teamScore;
 
     protected MatchScore() {}
 
     private MatchScore(Builder builder) {
-        this.matchID = builder.matchID;
+        this.matchId = builder.matchId;
         this.opponentScore = builder.opponentScore;
         this.teamScore = builder.teamScore;
     }
 
-    public String getMatchID() {
-        return matchID;
+    public String getMatchId() {
+        return matchId;
     }
 
     public byte getOpponentScore() {
@@ -41,19 +41,19 @@ public class MatchScore {
     @Override
     public String toString() {
         return "MatchScore{" +
-                "matchID=" + matchID +
+                "matchID=" + matchId +
                 ", opponentScore=" + opponentScore +
                 ", teamScore=" + teamScore +
                 '}';
     }
 
     public static class Builder {
-        private String matchID;
+        private String matchId;
         private byte opponentScore;
         private byte teamScore;
 
-        public Builder setMatchID(String matchID) {
-            this.matchID = matchID;
+        public Builder setMatchId(String matchId) {
+            this.matchId = matchId;
             return this;
         }
 
@@ -68,7 +68,7 @@ public class MatchScore {
         }
 
         public Builder copy(MatchScore matchScore) {
-            this.matchID = matchID;
+            this.matchId = matchId;
             this.opponentScore = matchScore.opponentScore;
             this.teamScore = matchScore.teamScore;
             return this;
@@ -84,11 +84,11 @@ public class MatchScore {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         MatchScore that = (MatchScore) o;
-        return opponentScore == that.opponentScore && teamScore == that.teamScore && matchID.equals(that.matchID);
+        return opponentScore == that.opponentScore && teamScore == that.teamScore && matchId.equals(that.matchId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(matchID, opponentScore, teamScore);
+        return Objects.hash(matchId, opponentScore, teamScore);
     }
 }

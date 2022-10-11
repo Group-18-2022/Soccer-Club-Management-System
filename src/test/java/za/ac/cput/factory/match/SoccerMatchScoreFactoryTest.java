@@ -26,7 +26,7 @@ class SoccerMatchScoreFactoryTest {
 
     @Test
     public void testMatchScoreFactoryValueMatchID() {
-        assertEquals("1", matchScore.getMatchID());
+        assertEquals("1", matchScore.getMatchId());
     }
 
     @Test
