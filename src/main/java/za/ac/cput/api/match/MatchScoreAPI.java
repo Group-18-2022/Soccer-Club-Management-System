@@ -20,7 +20,7 @@ public class MatchScoreAPI {
     }
 
     public MatchScore save(MatchScore matchScore) {
-        this.matchService.read(matchScore.getMatchID())
+        this.matchService.read(matchScore.getMatchId())
                 .orElseThrow( () -> new ResponseStatusException(HttpStatus.NOT_FOUND));
         return this.matchScoreService.save(matchScore);
     }

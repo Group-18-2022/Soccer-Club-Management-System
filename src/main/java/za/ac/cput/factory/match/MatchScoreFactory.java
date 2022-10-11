@@ -14,7 +14,7 @@ public class MatchScoreFactory {
         if(!isPositive(opponentScore) || !isPositive(teamScore)) throw  new IllegalArgumentException("Score(s) must be positive");
 
         return new MatchScore.Builder()
-                .setMatchID(matchID)
+                .setMatchId(matchID)
                 .setOpponentScore(opponentScore)
                 .setTeamScore(teamScore)
                 .build();

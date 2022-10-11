@@ -14,6 +14,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000", maxAge = 3600)
 @RequestMapping("api/v1/soccer-management/matchScore/")
 public class MatchScoreController {
     private final MatchScoreServiceImpl matchScoreService;
@@ -27,7 +28,7 @@ public class MatchScoreController {
 
     @PostMapping("save")
     public ResponseEntity<MatchScore> save(@Valid @RequestBody MatchScore matchScore) {
-        MatchScore saveScore = MatchScoreFactory.createMatchScore(matchScore.getMatchID(), matchScore.getOpponentScore(), matchScore.getTeamScore());
+        MatchScore saveScore = MatchScoreFactory.createMatchScore(matchScore.getMatchId(), matchScore.getOpponentScore(), matchScore.getTeamScore());
         return ResponseEntity.ok(api.save(saveScore));
     }
 
@@ -44,9 +45,9 @@ public class MatchScoreController {
     }
 
     @DeleteMapping("delete/{id}")
-    public ResponseEntity<Void> deleteById(@PathVariable String id) {
+    public ResponseEntity<Boolean> deleteById(@PathVariable String id) {
         this.matchScoreService.deleteById(id);
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.ok(true);
     }
 
     @GetMapping("all")
