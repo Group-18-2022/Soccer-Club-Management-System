@@ -18,11 +18,6 @@ public class PersonalDetailsFactory
 
     public static PersonalDetails createPersonalDetails(String id, String name, String surname, String dOb, ContactInformation contactDetails)
     {
-//        if(Helper.isNullOrEmpty(id))
-//        {
-//            return null;
-//        }
-//        else
         return new PersonalDetails.Builder()
                 .setIdNumber(id)
                 .setFirstName(name)
