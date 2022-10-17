@@ -31,7 +31,7 @@ class ClubControllerTest {
     public void startUp() {
         assertNotNull(clubController);
         this.club = ClubFactory.createClub("1","Super Strikers","Bob",true);
-        this.clubURL = "http://localhost:" + this.localPort + "/api/v1/soccer-management/Club/";
+        this.clubURL = "http://localhost:" + this.localPort + "/api/v1/soccer-management/club/";
     }
 
     @Test
