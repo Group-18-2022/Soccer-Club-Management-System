@@ -10,11 +10,10 @@ package za.ac.cput.domain.lookup;
 
 import za.ac.cput.domain.club.ContactInformation;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Embeddable;
-import javax.persistence.Embedded;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
-import java.time.LocalDate;
 
 @Embeddable
 public class PersonalDetails
@@ -27,7 +26,8 @@ public class PersonalDetails
     private String surname;
     @NotNull
     private String dateOfBirth;
-    @OneToOne
+
+    @OneToOne(cascade = {CascadeType.ALL})
     @NotNull
     private ContactInformation contactDetails;
 

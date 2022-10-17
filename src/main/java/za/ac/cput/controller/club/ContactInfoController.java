@@ -30,7 +30,7 @@ public class ContactInfoController {
     @PostMapping("save")
     public ResponseEntity<ContactInformation> save(@Valid @RequestBody ContactInformation contactInformation){
         ContactInformation saveContacts = ContactInformationFactory.createContactInfo(
-                contactInformation.getContactID(),contactInformation.getStreetNumber(),
+                contactInformation.getContactId(),contactInformation.getStreetNumber(),
                 contactInformation.getStreetName(),contactInformation.getArea(),
                 contactInformation.getCity(),contactInformation.getZipCode(),
                 contactInformation.getPhoneNumber(),contactInformation.getEmailAddress());

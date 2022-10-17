@@ -52,7 +52,7 @@ class ContactInfoControllerTest {
 
     @Test @Order(2)
     void read() {
-        String url = contactURL + "read/" + this.contactInformation.getContactID();
+        String url = contactURL + "read/" + this.contactInformation.getContactId();
         ResponseEntity<ContactInformation> readResponse = this.contactRestTemp.getForEntity(url, ContactInformation.class);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, readResponse.getStatusCode()),
@@ -62,7 +62,7 @@ class ContactInfoControllerTest {
 
     @Test @Order(3)
     void deleteById() {
-        String url = contactURL + "delete/" + this.contactInformation.getContactID();
+        String url = contactURL + "delete/" + this.contactInformation.getContactId();
         this.contactRestTemp.delete(url);
     }
 

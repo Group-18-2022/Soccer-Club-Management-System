@@ -36,7 +36,7 @@ public class KitController {
     }
 
     @DeleteMapping("delete")
-    public ResponseEntity<Void> delete(Kit kit) {
+    public ResponseEntity<Boolean> delete(Kit kit) {
         this.kitService.delete(kit);
         return ResponseEntity.noContent().build();
     }

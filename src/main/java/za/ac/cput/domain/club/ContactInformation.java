@@ -12,15 +12,15 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class ContactInformation {
     @NotNull @Id
-    private String contactID;
+    private String contactId;
     @NotNull
     private String streetName;
     @NotNull
     private String streetNumber;
     @NotNull
-    private String Area;
+    private String area;
     @NotNull
-    private String City;
+    private String city;
     @NotNull
     private int zipCode;
     @NotNull
@@ -30,18 +30,18 @@ public class ContactInformation {
 
     protected  ContactInformation(){}
     public ContactInformation(ContactInfoBuilder builder) {
-        this.contactID = builder.contactID;
+        this.contactId = builder.contactID;
         this.streetName = builder.streetName;;
         this.streetNumber = builder.streetNumber;
-        this.Area = builder.Area;;
-        this.City = builder.City;
+        this.area = builder.area;;
+        this.city = builder.city;
         this.zipCode = builder.zipCode;;
         this.phoneNumber = builder.phoneNumber;
         this.emailAddress = builder.emailAddress;
     }
 
-    public String getContactID() {
-        return contactID;
+    public String getContactId() {
+        return contactId;
     }
 
     public String getStreetName() {
@@ -53,11 +53,11 @@ public class ContactInformation {
     }
 
     public String getArea() {
-        return Area;
+        return area;
     }
 
     public String getCity() {
-        return City;
+        return city;
     }
 
     public int getZipCode() {
@@ -75,11 +75,11 @@ public class ContactInformation {
     @Override
     public String toString() {
         return "ContactInformation{" +
-                "contactID:'" + contactID + '\'' +
+                "contactID:'" + contactId + '\'' +
                 ", streetNumber:'" + streetNumber + '\'' +
                 ", streetName:'" + streetName + '\'' +
-                ", Area:'" + Area + '\'' +
-                ", City:'" + City + '\'' +
+                ", Area:'" + area + '\'' +
+                ", City:'" + city + '\'' +
                 ", zipCode:" + zipCode +
                 ", phoneNumber:'" + phoneNumber + '\'' +
                 ", emailAddress:'" + emailAddress + '\'' +
@@ -90,8 +90,8 @@ public class ContactInformation {
         private String contactID;
         private String streetName;
         private String streetNumber;
-        private String Area;
-        private String City;
+        private String area;
+        private String city;
         private int zipCode;
         private String phoneNumber;
         private String emailAddress;
@@ -112,12 +112,12 @@ public class ContactInformation {
         }
 
         public ContactInfoBuilder setArea(String area) {
-            Area = area;
+            this.area = area;
             return this;
         }
 
         public ContactInfoBuilder setCity(String city) {
-            City = city;
+            this.city = city;
             return this;
         }
 
@@ -137,11 +137,11 @@ public class ContactInformation {
         }
 
         public ContactInfoBuilder copy(ContactInformation contactInformation){
-            this.contactID = contactInformation.contactID;
+            this.contactID = contactInformation.contactId;
             this.streetName = contactInformation.streetName;
             this.streetNumber = contactInformation.streetNumber;
-            this.Area = contactInformation.Area;
-            this.City = contactInformation.City;
+            this.area = contactInformation.area;
+            this.city = contactInformation.city;
             this.zipCode = contactInformation.zipCode;
             this.phoneNumber = contactInformation.phoneNumber;
             this.emailAddress = contactInformation.emailAddress;

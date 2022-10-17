@@ -35,6 +35,14 @@ public class Player
     @NotNull
     PersonalDetails personalDetails;
 
+    public Player(String empNumber, int fieldPosition, int jerseyNumber, String teamId, PersonalDetails personalDetails) {
+        this.empNumber = empNumber;
+        this.fieldPosition = fieldPosition;
+        this.jerseyNumber = jerseyNumber;
+        this.teamId = teamId;
+        this.personalDetails = personalDetails;
+    }
+
     public void setPersonalDetails(PersonalDetails personalDetails) {
         this.personalDetails = personalDetails;
     }
@@ -66,6 +74,7 @@ public class Player
         this.fieldPosition = builder.fieldPosition;
         this.jerseyNumber = builder.jerseyNumber;
         this.teamId = builder.teamId;
+        this.personalDetails = builder.personalDetails;
     }
 
     @Override
@@ -88,7 +97,6 @@ public class Player
 
         public Builder setEmpNumber(String empNumber)
         {
-            this.empNumber = empNumber;
             this.empNumber = empNumber;
             return this;
         }
