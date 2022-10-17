@@ -17,6 +17,7 @@ import java.util.List;
  * @author Charles Moses Lemmert (220498385)
  * **/
 @RestController
+@CrossOrigin(origins = "http://localhost:3000", maxAge = 3600)
 @RequestMapping("api/v1/soccer-management/club/")
 public class ClubController {
 

@@ -16,6 +16,7 @@ import java.util.List;
  * @author Charles Moses Lemmert (220498385)
  * **/
 @RestController
+@CrossOrigin(origins = "http://localhost:3000", maxAge = 3600)
 @RequestMapping("api/v1/soccer-management/contactinformation/")
 public class ContactInfoController {
 
@@ -29,7 +30,7 @@ public class ContactInfoController {
     @PostMapping("save")
     public ResponseEntity<ContactInformation> save(@Valid @RequestBody ContactInformation contactInformation){
         ContactInformation saveContacts = ContactInformationFactory.createContactInfo(
-                contactInformation.getContactID(),contactInformation.getStreetNumber(),
+                contactInformation.getContactId(),contactInformation.getStreetNumber(),
                 contactInformation.getStreetName(),contactInformation.getArea(),
                 contactInformation.getCity(),contactInformation.getZipCode(),
                 contactInformation.getPhoneNumber(),contactInformation.getEmailAddress());

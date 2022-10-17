@@ -16,7 +16,7 @@ import java.time.LocalDate;
 public class PersonalDetailsFactory
 {
 
-    public static PersonalDetails createPersonalDetails(String id, String name, String surname, LocalDate dOb, ContactInformation contactDetails)
+    public static PersonalDetails createPersonalDetails(String id, String name, String surname, String dOb, ContactInformation contactDetails)
     {
 //        if(Helper.isNullOrEmpty(id))
 //        {

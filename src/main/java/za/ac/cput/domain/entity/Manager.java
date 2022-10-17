@@ -35,6 +35,14 @@ public class Manager
     @NotNull
     PersonalDetails personalDetails;
 
+    public Manager(String empNumber, String jobTitle, String clubName, int yearsExperience, PersonalDetails personalDetails) {
+        this.empNumber = empNumber;
+        this.jobTitle = jobTitle;
+        this.clubName = clubName;
+        this.yearsExperience = yearsExperience;
+        this.personalDetails = personalDetails;
+    }
+
     public void setPersonalDetails(PersonalDetails personalDetails) {
         this.personalDetails = personalDetails;
     }

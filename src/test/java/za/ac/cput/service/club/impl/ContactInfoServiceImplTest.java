@@ -3,9 +3,7 @@ package za.ac.cput.service.club.impl;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import za.ac.cput.domain.club.Club;
 import za.ac.cput.domain.club.ContactInformation;
-import za.ac.cput.factory.club.ClubFactory;
 import za.ac.cput.factory.club.ContactInformationFactory;
 
 import java.util.List;
@@ -41,7 +39,7 @@ class ContactInfoServiceImplTest {
     @Test
     @Order(2)
     void read() {
-        Optional<ContactInformation> readContact = this.service.read(contactInfo.getContactID());
+        Optional<ContactInformation> readContact = this.service.read(contactInfo.getContactId());
         assertAll(
                 () -> assertTrue(readContact.isPresent()),
                 () -> assertEquals(contactInfo, readContact.get())
@@ -51,7 +49,7 @@ class ContactInfoServiceImplTest {
     @Test
     @Order(4)
     void deleteById() {
-        this.service.deleteById(this.contactInfo.getContactID());
+        this.service.deleteById(this.contactInfo.getContactId());
         List<ContactInformation> contactList = this.service.findAllContacts();
         assertEquals(0, contactList.size());
     }

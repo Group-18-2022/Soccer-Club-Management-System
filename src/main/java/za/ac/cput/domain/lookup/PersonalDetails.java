@@ -10,11 +10,10 @@ package za.ac.cput.domain.lookup;
 
 import za.ac.cput.domain.club.ContactInformation;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Embeddable;
-import javax.persistence.Embedded;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
-import java.time.LocalDate;
 
 @Embeddable
 public class PersonalDetails
@@ -26,8 +25,8 @@ public class PersonalDetails
     @NotNull
     private String surname;
     @NotNull
-    private LocalDate dateOfBirth;
-    @OneToOne
+    private String dateOfBirth;
+    @OneToOne(cascade = {CascadeType.ALL})
     @NotNull
     private ContactInformation contactDetails;
 
@@ -46,7 +45,7 @@ public class PersonalDetails
         return surname;
     }
 
-    public LocalDate getDateOfBirth() {
+    public String getDateOfBirth() {
         return dateOfBirth;
     }
 
@@ -67,7 +66,7 @@ public class PersonalDetails
         private String idNumber;
         private String firstName;
         private String surname;
-        private LocalDate dateOfBirth;
+        private String dateOfBirth;
         private ContactInformation contactDetails;
 
         public Builder setIdNumber(String idNumber)
@@ -88,7 +87,7 @@ public class PersonalDetails
             return this;
         }
 
-        public Builder setDateOfBirth(LocalDate dateOfBirth)
+        public Builder setDateOfBirth(String dateOfBirth)
         {
             this.dateOfBirth = dateOfBirth;
             return  this;
