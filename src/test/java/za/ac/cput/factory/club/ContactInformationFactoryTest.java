@@ -7,7 +7,6 @@ package za.ac.cput.factory.club;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import za.ac.cput.domain.club.ContactInformation;
-import za.ac.cput.factory.club.ContactInformationFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 

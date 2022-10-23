@@ -29,7 +29,8 @@ public class ClubController {
     }
     @PostMapping("save")
     public ResponseEntity<Club> save(@Valid @RequestBody Club club){
-       Club saveClub = ClubFactory.createClub(club.getClubID(),club.getClubName()
+        System.out.println("Club: " + club);
+       Club saveClub = ClubFactory.createClub(club.getClubId(),club.getClubName()
                ,club.getClubOwner(),club.getIsRegisteredClub());
        return ResponseEntity.ok(clubService.save(saveClub));
     }

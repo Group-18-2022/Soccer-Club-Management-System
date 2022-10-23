@@ -10,7 +10,6 @@ import za.ac.cput.factory.match.MatchFactory;
 import za.ac.cput.service.match.impl.MatchServiceImpl;
 
 import javax.validation.Valid;
-import java.sql.SQLOutput;
 import java.util.List;
 
 @RestController

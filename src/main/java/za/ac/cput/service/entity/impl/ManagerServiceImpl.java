@@ -51,4 +51,9 @@ public class ManagerServiceImpl implements ManagerServiceInterface
     public void deleteById(String id) {
         this.managerRepository.deleteById(id);
     }
+
+    @Override
+    public Optional<Manager> findManagerByByNameAndEmail(String name, String email) {
+        return this.managerRepository.findManagerByByNameAndEmail(name, email);
+    }
 }

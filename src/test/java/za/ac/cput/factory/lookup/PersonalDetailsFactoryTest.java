@@ -10,7 +10,6 @@ package za.ac.cput.factory.lookup;
 
 import org.junit.jupiter.api.Test;
 import za.ac.cput.domain.lookup.PersonalDetails;
-import za.ac.cput.factory.lookup.PersonalDetailsFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 

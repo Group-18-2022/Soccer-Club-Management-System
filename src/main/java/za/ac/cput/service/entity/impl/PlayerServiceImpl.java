@@ -51,4 +51,11 @@ public class PlayerServiceImpl implements PlayerServiceInterface
         this.playerRepository.deleteById(id);
 
     }
+
+    @Override
+    public Optional<Player> findPlayerByByNameAndEmail(String name, String email) {
+        var player = this.playerRepository.findPlayerByByNameAndEmail(name, email);
+        System.out.println("Player, " + player.get());
+        return player;
+    }
 }

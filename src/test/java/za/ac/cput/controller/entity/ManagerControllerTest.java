@@ -8,10 +8,8 @@ import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import za.ac.cput.domain.entity.Manager;
-import za.ac.cput.domain.entity.Player;
 import za.ac.cput.domain.lookup.PersonalDetails;
 import za.ac.cput.factory.entity.ManagerFactory;
-import za.ac.cput.factory.entity.PlayerFactory;
 import za.ac.cput.factory.lookup.PersonalDetailsFactory;
 
 import static org.junit.jupiter.api.Assertions.*;

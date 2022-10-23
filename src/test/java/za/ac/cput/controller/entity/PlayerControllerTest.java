@@ -1,6 +1,5 @@
 package za.ac.cput.controller.entity;
 
-import org.hibernate.dialect.FrontBaseDialect;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -8,13 +7,10 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import za.ac.cput.controller.match.LocationController;
 import za.ac.cput.domain.entity.Player;
 import za.ac.cput.domain.lookup.PersonalDetails;
-import za.ac.cput.domain.match.Location;
 import za.ac.cput.factory.entity.PlayerFactory;
 import za.ac.cput.factory.lookup.PersonalDetailsFactory;
-import za.ac.cput.factory.match.LocationFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 

@@ -11,9 +11,11 @@ import za.ac.cput.domain.entity.Player;
 import za.ac.cput.service.IService;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface PlayerServiceInterface extends IService <Player, String>
 {
     public List<Player> readAll();
     public void deleteById(String id);
+    public Optional<Player> findPlayerByByNameAndEmail(String name, String email);
 }

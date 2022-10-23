@@ -14,9 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import za.ac.cput.domain.entity.Manager;
-import za.ac.cput.domain.entity.Player;
 import za.ac.cput.factory.entity.ManagerFactory;
-import za.ac.cput.factory.entity.PlayerFactory;
 import za.ac.cput.service.entity.impl.ManagerServiceImpl;
 
 import javax.validation.Valid;
@@ -35,6 +33,7 @@ public class ManagerController
 
     @PostMapping("save")
     public ResponseEntity<Manager> save(@Valid @RequestBody Manager manager) {
+        System.out.println("Manager: " + manager);
         Manager createManager =
                 ManagerFactory.createManager(manager.getEmpNumber(), manager.getClubName(), manager.getJobTitle(), manager.getYearsExperience(), manager.getPersonalDetails());
         return ResponseEntity.ok(managerService.save(createManager));

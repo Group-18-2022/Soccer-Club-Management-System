@@ -12,7 +12,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class Club {
     @NotNull @Id
-    private String clubID;
+    private String clubId;
     @NotNull
     private String clubName;
     @NotNull
@@ -23,13 +23,13 @@ public class Club {
 
     protected  Club(){}
     private Club(ClubBuilder builder){
-        this.clubID = builder.clubID;
+        this.clubId = builder.clubID;
         this.clubName = builder.clubName;
         this.clubOwner = builder.clubOwner;
         this.isRegisteredClub = builder.isRegisteredClub;
     }
-    public String getClubID() {
-        return clubID;
+    public String getClubId() {
+        return clubId;
     }
 
     public String getClubName() {
@@ -47,7 +47,7 @@ public class Club {
     @Override
     public String toString() {
         return "Club{" +
-                "clubID:" + clubID +
+                "clubID:" + clubId +
                 ", clubName:'" + clubName + '\'' +
                 ", clubOwner:'" + clubOwner + '\'' +
                 ", isRegisteredClub:" + isRegisteredClub +
@@ -81,7 +81,7 @@ public class Club {
         }
 
         public ClubBuilder copy(Club club){
-            this.clubID = club.clubID;
+            this.clubID = club.clubId;
             this.clubName = club.clubName;
             this.clubOwner = club.clubOwner;
             this.isRegisteredClub = club.isRegisteredClub;

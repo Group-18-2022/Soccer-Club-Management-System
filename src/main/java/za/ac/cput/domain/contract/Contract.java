@@ -10,8 +10,6 @@ import za.ac.cput.domain.lookup.PersonalDetails;
 
 import javax.persistence.Embeddable;
 import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
 @Embeddable

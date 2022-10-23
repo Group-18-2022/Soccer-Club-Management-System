@@ -37,7 +37,7 @@ class ClubServiceImplTest {
     @Test
     @Order(2)
     void read() {
-        Optional<Club> readClub = this.clubService.read(club.getClubID());
+        Optional<Club> readClub = this.clubService.read(club.getClubId());
         assertAll(
                 () -> assertTrue(readClub.isPresent()),
                 () -> assertEquals(club, readClub.get())
@@ -47,7 +47,7 @@ class ClubServiceImplTest {
     @Test
     @Order(4)
     void deleteById() {
-        this.clubService.deleteById(this.club.getClubID());
+        this.clubService.deleteById(this.club.getClubId());
         List<Club> clubList = this.clubService.findAllClubs();
         assertEquals(0, clubList.size());
     }

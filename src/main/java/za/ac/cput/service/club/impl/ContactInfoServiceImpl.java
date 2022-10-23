@@ -2,7 +2,6 @@ package za.ac.cput.service.club.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import za.ac.cput.domain.club.Club;
 import za.ac.cput.domain.club.ContactInformation;
 import za.ac.cput.repository.club.ContactInformationRepository;
 import za.ac.cput.service.club.ContactInfoService;

@@ -15,9 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import za.ac.cput.domain.entity.Player;
-import za.ac.cput.domain.match.Location;
 import za.ac.cput.factory.entity.PlayerFactory;
-import za.ac.cput.factory.match.LocationFactory;
 import za.ac.cput.service.entity.impl.PlayerServiceImpl;
 
 import javax.validation.Valid;
@@ -36,6 +34,7 @@ public class PlayerController
 
     @PostMapping("save")
     public ResponseEntity<Player> save(@Valid @RequestBody Player player) {
+        System.out.println("PLayData: " + player);
         Player createPLayer =
                 PlayerFactory.createPlayer(player.getEmpNumber(), player.getFieldPosition(), player.getJerseyNumber(), player.getTeamId(), player.getPersonalDetails());
         return ResponseEntity.ok(playerService.save(createPLayer));
