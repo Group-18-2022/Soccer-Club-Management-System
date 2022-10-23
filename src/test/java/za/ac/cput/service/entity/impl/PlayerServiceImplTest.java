@@ -7,9 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import za.ac.cput.domain.entity.Player;
 import za.ac.cput.domain.lookup.PersonalDetails;
-import za.ac.cput.domain.match.Location;
 import za.ac.cput.factory.entity.PlayerFactory;
-import za.ac.cput.factory.match.LocationFactory;
 
 import java.util.List;
 import java.util.Optional;

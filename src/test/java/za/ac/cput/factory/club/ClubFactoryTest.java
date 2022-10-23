@@ -8,7 +8,6 @@ package za.ac.cput.factory.club;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import za.ac.cput.domain.club.Club;
-import za.ac.cput.factory.club.ClubFactory;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;

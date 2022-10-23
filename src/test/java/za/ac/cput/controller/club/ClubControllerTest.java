@@ -48,7 +48,7 @@ class ClubControllerTest {
 
     @Test @Order(2)
     void read() {
-        String url = clubURL + "read/" + this.club.getClubID();
+        String url = clubURL + "read/" + this.club.getClubId();
         ResponseEntity<Club> readResponse = this.clubRestTemp.getForEntity(url, Club.class);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, readResponse.getStatusCode()),
@@ -58,7 +58,7 @@ class ClubControllerTest {
 
     @Test @Order(3)
     void deleteById() {
-        String url = clubURL + "delete/" + this.club.getClubID();
+        String url = clubURL + "delete/" + this.club.getClubId();
         this.clubRestTemp.delete(url);
     }
 

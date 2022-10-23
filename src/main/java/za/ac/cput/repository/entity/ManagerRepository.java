@@ -12,9 +12,7 @@ package za.ac.cput.repository.entity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import za.ac.cput.domain.entity.Manager;
-import za.ac.cput.factory.entity.ManagerFactory;
 
-import java.util.List;
 import java.util.Optional;
 
 public interface ManagerRepository extends JpaRepository <Manager, String>

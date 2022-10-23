@@ -6,11 +6,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import za.ac.cput.domain.entity.Manager;
-import za.ac.cput.domain.entity.Player;
 import za.ac.cput.domain.lookup.PersonalDetails;
 import za.ac.cput.factory.entity.ManagerFactory;
-import za.ac.cput.factory.entity.PlayerFactory;
-import za.ac.cput.service.entity.ManagerServiceInterface;
 
 import java.util.List;
 import java.util.Optional;

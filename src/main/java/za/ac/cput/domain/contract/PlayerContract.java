@@ -6,7 +6,6 @@ Assignment 1
 
 package za.ac.cput.domain.contract;
 
-import za.ac.cput.domain.contract.Contract;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Id;

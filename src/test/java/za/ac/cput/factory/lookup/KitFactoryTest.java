@@ -8,7 +8,6 @@ package za.ac.cput.factory.lookup;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import za.ac.cput.domain.lookup.Kit;
-import za.ac.cput.factory.lookup.KitFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 

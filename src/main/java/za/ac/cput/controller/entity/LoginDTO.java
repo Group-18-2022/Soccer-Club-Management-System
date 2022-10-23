@@ -2,10 +2,6 @@ package za.ac.cput.controller.entity;
 
 import za.ac.cput.domain.lookup.PersonalDetails;
 
-import javax.persistence.Embedded;
-import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
-
 public class LoginDTO {
     private String name, email;
 
