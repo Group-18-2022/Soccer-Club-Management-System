@@ -14,14 +14,9 @@ import za.ac.cput.domain.entity.Player;
 public class PlayerFactory
 
 {
-    public static Player createPlayer (String empNumber, int fieldPosition, Integer jerseyNumber, String teamId, PersonalDetails personalDetails)
+    public static Player createPlayer (String empNumber, int fieldPosition, int jerseyNumber, String teamId, PersonalDetails personalDetails)
     {
 
-        if(personalDetails == null) //personalDetails has id number. We cannot create any type of user without the id number.
-        {
-            return  null;
-        }
-        else
         return new Player.Builder()
                 .setEmpNumber(empNumber)
                 .setFieldPosition(fieldPosition)

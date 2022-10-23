@@ -26,6 +26,7 @@ public class PersonalDetails
     private String surname;
     @NotNull
     private String dateOfBirth;
+
     @OneToOne(cascade = {CascadeType.ALL})
     @NotNull
     private ContactInformation contactDetails;
@@ -51,6 +52,18 @@ public class PersonalDetails
 
     public ContactInformation getContactDetails() {
         return contactDetails;
+    }
+
+
+    @Override
+    public String toString() {
+        return "PersonalDetails{" +
+                "idNumber='" + idNumber + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", surname='" + surname + '\'' +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
+                ", contactDetails=" + contactDetails +
+                '}';
     }
 
     private PersonalDetails(Builder builder)
