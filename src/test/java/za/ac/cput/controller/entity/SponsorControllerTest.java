@@ -54,7 +54,7 @@ class SponsorControllerTest {
     @Test
     @Order(2)
     void read() {
-        String url = baseURL + "read/" + this.sponsor.getRoleID();
+        String url = baseURL + "read/" + this.sponsor.getRoleId();
         ResponseEntity<Sponsor> response = this.restTemplate.getForEntity(url,Sponsor.class);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
@@ -72,7 +72,7 @@ class SponsorControllerTest {
     @Test
     @Order(4)
     void deleteById() {
-        String url = baseURL + "delete/" + this.sponsor.getRoleID();
+        String url = baseURL + "delete/" + this.sponsor.getRoleId();
         this.restTemplate.delete(url);
     }
 

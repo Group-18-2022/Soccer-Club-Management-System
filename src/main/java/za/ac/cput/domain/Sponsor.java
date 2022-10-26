@@ -15,20 +15,22 @@ import java.util.Objects;
 public class Sponsor {
     @NotNull
     @Id
-    private String roleID;
+    private String roleId;
     @NotNull
     private String taxNumber;
     @NotNull
     private String companyName;
 
     private Sponsor(Sponsor.Builder builder) {
-        this.roleID = builder.roleID;
+        this.roleId = builder.roleID;
         this.taxNumber = builder.taxNumber;
         this.companyName = builder.companyName;
     }
 
-    public String getRoleID() {
-        return roleID;
+    protected Sponsor() {}
+
+    public String getRoleId() {
+        return roleId;
     }
 
     public String getTaxNumber() {
@@ -42,7 +44,7 @@ public class Sponsor {
     @Override
     public String toString() {
         return "Sponsor{" +
-                "roleID='" + roleID + '\'' +
+                "roleID='" + roleId + '\'' +
                 ", taxNumber='" + taxNumber + '\'' +
                 ", companyName='" + companyName + '\'' +
                 '}';
@@ -69,7 +71,7 @@ public class Sponsor {
         }
 
         public Sponsor.Builder copy(Sponsor sponsor) {
-            this.roleID = sponsor.roleID;
+            this.roleID = sponsor.roleId;
             this.taxNumber = sponsor.taxNumber;
             this.companyName = sponsor.companyName;
             return this;

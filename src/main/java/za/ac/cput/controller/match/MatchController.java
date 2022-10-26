@@ -25,6 +25,7 @@ public class MatchController {
 
     @PostMapping("save")
     public ResponseEntity<SoccerMatch> save(@Valid @RequestBody SoccerMatch soccerMatch) {
+        System.out.println("Match" + soccerMatch);
         SoccerMatch saveSoccerMatch = MatchFactory.createMatch(soccerMatch.getMatchId(), soccerMatch.getOpponent(), soccerMatch.getKitType(), soccerMatch.getDate(), soccerMatch.getTime());
         return ResponseEntity.ok(matchService.save(saveSoccerMatch));
     }

@@ -8,9 +8,7 @@ package za.ac.cput.factory.team;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import za.ac.cput.domain.team.Team;
 import za.ac.cput.domain.team.TeamStatistics;
-import za.ac.cput.factory.team.TeamStatisticsFactory;
 
 import static org.junit.jupiter.api.Assertions.*;
 

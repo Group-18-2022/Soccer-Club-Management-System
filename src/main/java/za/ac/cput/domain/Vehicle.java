@@ -30,6 +30,8 @@ public class Vehicle {
         this.capacity = builder.capacity;
     }
 
+    protected Vehicle() {}
+
     public String getVinNumber() {
         return vinNumber;
     }
