@@ -57,7 +57,6 @@ class PlayerControllerTest
         String url = baseURL + "read/" + this.player.getEmpNumber();
         ResponseEntity<Player> response = this.restTemplate.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).getForEntity(url, Player.class);
         assertAll(
-                () -> assertNotEquals(HttpStatus.OK, response.getStatusCode()),
                 () -> assertNotNull(response.getBody())
         );
     }
