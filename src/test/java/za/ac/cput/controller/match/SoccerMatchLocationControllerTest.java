@@ -33,7 +33,8 @@ class SoccerMatchLocationControllerTest {
 
     private MatchLocation matchLocation;
     private String baseURL;
-
+    private String SECURITY_USERNAME = "Manager";
+    private String SECURITY_PASSWORD = "ManagerPassword";
     @BeforeEach
     void setUp() {
         assertNotNull(controller);
@@ -46,7 +47,7 @@ class SoccerMatchLocationControllerTest {
     void save() {
         String url = baseURL + "save";
         insertMatch();
-        ResponseEntity<MatchLocation> response = this.restTemplate.postForEntity(
+        ResponseEntity<MatchLocation> response = this.restTemplate.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).postForEntity(
                 url, this.matchLocation, MatchLocation.class);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
@@ -58,7 +59,7 @@ class SoccerMatchLocationControllerTest {
 //    @Test @Order(2)
 //    void read() {
 //        String url = baseURL + "read/" + new MatchLocation.MatchLocationID("1", "1");
-//        ResponseEntity<MatchLocation> response = this.restTemplate.getForEntity(url, MatchLocation.class);
+//        ResponseEntity<MatchLocation> response = this.restTemplate.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).getForEntity(url, MatchLocation.class);
 //        assertAll(
 //                () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
 //                () -> assertNotNull(response.getBody())
@@ -68,13 +69,13 @@ class SoccerMatchLocationControllerTest {
     @Test @Order(3)
     void delete() {
         String url = baseURL + "delete";
-        this.restTemplate.delete(url, matchLocation);
+        this.restTemplate.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).delete(url, matchLocation);
     }
 
     @Test @Order(4)
     void findAll() {
         String url = baseURL + "all";
-        ResponseEntity<MatchLocation[]> response = this.restTemplate
+        ResponseEntity<MatchLocation[]> response = this.restTemplate.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD)
                 .getForEntity(url, MatchLocation[].class);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, response.getStatusCode()),

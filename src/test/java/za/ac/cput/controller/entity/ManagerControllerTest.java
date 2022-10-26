@@ -26,7 +26,8 @@ class ManagerControllerTest
 
     private Manager manager;
     private String baseURL;
-
+    private String SECURITY_USERNAME = "Manager";
+    private String SECURITY_PASSWORD = "ManagerPassword";
     @BeforeEach
     void setUp() {
         assertNotNull(controller);
@@ -42,7 +43,7 @@ class ManagerControllerTest
     void save()
     {
         String url = baseURL + "save";
-        ResponseEntity<Manager> response = this.restTemplate.postForEntity(
+        ResponseEntity<Manager> response = this.restTemplate.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).postForEntity(
                 url, this.manager, Manager.class);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
@@ -53,7 +54,7 @@ class ManagerControllerTest
     @Test @Order(2)
     void read() {
         String url = baseURL + "read/" + this.manager.getEmpNumber();
-        ResponseEntity<Manager> response = this.restTemplate.getForEntity(url, Manager.class);
+        ResponseEntity<Manager> response = this.restTemplate.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).getForEntity(url, Manager.class);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
                 () -> assertNotNull(response.getBody())
@@ -63,13 +64,13 @@ class ManagerControllerTest
     @Test @Order(3)
     void deleteById() {
         String url = baseURL + "delete/" + this.manager.getEmpNumber();
-        this.restTemplate.delete(url);
+        this.restTemplate.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).delete(url);
     }
 
     @Test @Order(4)
     void findAll() {
         String url = baseURL + "all";
-        ResponseEntity<Manager[]> response = this.restTemplate
+        ResponseEntity<Manager[]> response = this.restTemplate.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD)
                 .getForEntity(url, Manager[].class);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, response.getStatusCode()),

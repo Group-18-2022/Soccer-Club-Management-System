@@ -23,7 +23,8 @@ class KitControllerTest {
 
     private Kit kit;
     private String baseURL;
-
+    private String SECURITY_USERNAME = "Manager";
+    private String SECURITY_PASSWORD = "ManagerPassword";
     @BeforeEach
     void setUp() {
         assertNotNull(controller);
@@ -35,7 +36,7 @@ class KitControllerTest {
     @Order(1)
     void save() {
         String url = baseURL + "save";
-        ResponseEntity<Kit> response = this.restTemplate.postForEntity(
+        ResponseEntity<Kit> response = this.restTemplate.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).postForEntity(
                 url, this.kit, Kit.class);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
@@ -46,7 +47,7 @@ class KitControllerTest {
     @Test @Order(2)
     void read() {
         String url = baseURL + "read/" + this.kit.getKitType();
-        ResponseEntity<Kit> response = this.restTemplate.getForEntity(url, Kit.class);
+        ResponseEntity<Kit> response = this.restTemplate.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).getForEntity(url, Kit.class);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
                 () -> assertNotNull(response.getBody())
@@ -56,13 +57,13 @@ class KitControllerTest {
     @Test @Order(3)
     void deleteById() {
         String url = baseURL + "delete/" + this.kit.getKitType();
-        this.restTemplate.delete(url);
+        this.restTemplate.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).delete(url);
     }
 
     @Test @Order(4)
     void findAll() {
         String url = baseURL + "all";
-        ResponseEntity<Kit[]> response = this.restTemplate
+        ResponseEntity<Kit[]> response = this.restTemplate.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD)
                 .getForEntity(url, Kit[].class);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, response.getStatusCode()),

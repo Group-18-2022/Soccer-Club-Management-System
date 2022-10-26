@@ -29,7 +29,8 @@ class TeamStatisticsControllerTest {
     private TestRestTemplate TeamStatisticsRestTemp;
     private TeamStatistics teamStatistics;
     private  String TeamStatisticsBaseUrl;
-
+    private String SECURITY_USERNAME = "Manager";
+    private String SECURITY_PASSWORD = "ManagerPassword";
     @BeforeEach
     public void startUp(){
         assertNotNull(teamStatisticsController);
@@ -41,7 +42,7 @@ class TeamStatisticsControllerTest {
     @Order(1)
     void save() {
         String saveUrl = TeamStatisticsBaseUrl + "save";
-        ResponseEntity<TeamStatistics> saveResponse = this.TeamStatisticsRestTemp.
+        ResponseEntity<TeamStatistics> saveResponse = this.TeamStatisticsRestTemp.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).
                 postForEntity(saveUrl,this.teamStatistics, TeamStatistics.class);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, saveResponse.getStatusCode()),
@@ -53,7 +54,7 @@ class TeamStatisticsControllerTest {
     @Order(2)
     void read() {
         String teamStatisticsBaseUrl = TeamStatisticsBaseUrl + "read/" + this.teamStatistics.getTeamId();
-        ResponseEntity<Team> readResponse = this.TeamStatisticsRestTemp.getForEntity(teamStatisticsBaseUrl,Team.class);
+        ResponseEntity<Team> readResponse = this.TeamStatisticsRestTemp.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).getForEntity(teamStatisticsBaseUrl,Team.class);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, readResponse.getStatusCode()),
                 () -> assertNotEquals(null,readResponse)
@@ -65,21 +66,21 @@ class TeamStatisticsControllerTest {
     @Order(3)
     void deleteById() {
         String deleteByIdUrl = TeamStatisticsBaseUrl + "delete/" + this.teamStatistics.getTeamId();
-        this.TeamStatisticsRestTemp.delete(deleteByIdUrl);
+        this.TeamStatisticsRestTemp.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).delete(deleteByIdUrl);
     }
 
     @Test
     @Order(4)
     void delete() {
         String deleteUrl = TeamStatisticsBaseUrl + "delete/";
-        this.TeamStatisticsRestTemp.delete(deleteUrl);
+        this.TeamStatisticsRestTemp.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).delete(deleteUrl);
     }
 
     @Test
     @Order(5)
     void findAll() {
         String findAllUrl = TeamStatisticsBaseUrl +"all";
-        ResponseEntity<TeamStatistics[]> findAllResponse = this.TeamStatisticsRestTemp.
+        ResponseEntity<TeamStatistics[]> findAllResponse = this.TeamStatisticsRestTemp.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).
                 getForEntity(findAllUrl,TeamStatistics[].class);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, findAllResponse.getStatusCode()),
