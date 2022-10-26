@@ -29,7 +29,7 @@ public class SponsorController {
 
     @PostMapping("save")
     public ResponseEntity<Sponsor> save(@Valid @RequestBody Sponsor sponsor) {
-        Sponsor newSponsor = SponsorFactory.createSponsor(sponsor.getRoleID(), sponsor.getTaxNumber(), sponsor.getCompanyName());
+        Sponsor newSponsor = SponsorFactory.createSponsor(sponsor.getRoleId(), sponsor.getTaxNumber(), sponsor.getCompanyName());
         return ResponseEntity.ok(sponsorService.save(newSponsor));
     }
 

@@ -51,7 +51,7 @@ class SponsorServiceImplTest {
 
     @Test
     void read() {
-        Optional<Sponsor> read = this.service.read(sponsor.getRoleID());
+        Optional<Sponsor> read = this.service.read(sponsor.getRoleId());
         assertAll(
                 () -> assertTrue(read.isPresent()),
                 () -> assertEquals(sponsor, read.get())
@@ -66,7 +66,7 @@ class SponsorServiceImplTest {
 
     @Test
     void deleteByID() {
-        this.service.deleteByID(sponsor.getRoleID());
+        this.service.deleteByID(sponsor.getRoleId());
         List<Sponsor> sponsorList = this.service.findAll();
         assertAll(
                 () -> assertEquals(0, sponsorList.size())
