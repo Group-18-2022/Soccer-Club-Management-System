@@ -1,8 +1,6 @@
 package za.ac.cput.service.match.impl;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import za.ac.cput.domain.match.Location;
@@ -14,6 +12,7 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class LocationServiceImplTest {
     private Location location;
     @Autowired
@@ -34,6 +33,7 @@ class LocationServiceImplTest {
     }
 
     @Test
+    @Order(1)
     void read() {
         Optional<Location> read = this.service.read(location.getLocationId());
         assertAll(
@@ -43,12 +43,14 @@ class LocationServiceImplTest {
     }
 
     @Test
+    @Order(2)
     void findAll() {
         List<Location> locationList = this.service.findAll();
         assertEquals(1, locationList.size());
     }
 
     @Test
+    @Order(3)
     void deleteById() {
         this.service.deleteById(location.getLocationId());
         List<Location> locationList = this.service.findAll();

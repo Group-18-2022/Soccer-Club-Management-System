@@ -6,11 +6,6 @@ Assignment 1
 
 package za.ac.cput.factory.contract;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import za.ac.cput.domain.contract.Contract;
-import za.ac.cput.factory.contract.ContractFactory;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 

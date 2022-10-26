@@ -3,6 +3,8 @@ package za.ac.cput.controller.entity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import za.ac.cput.domain.entity.Manager;
+import za.ac.cput.domain.entity.Player;
 import za.ac.cput.service.entity.impl.ManagerServiceImpl;
 import za.ac.cput.service.entity.impl.PlayerServiceImpl;
 
@@ -26,11 +28,11 @@ public class AuthController {
     public ResponseEntity<Object> login(@Valid @RequestBody LoginDTO loginDTO) {
         var isManager = managerService.findManagerByByNameAndEmail(loginDTO.getName(), loginDTO.getEmail());
         if(isManager.isPresent())
-            return ResponseEntity.ok(isManager.get());
+            return ResponseEntity.ok((Manager) isManager.get());
 
         var isPlayer = playerService.findPlayerByByNameAndEmail(loginDTO.getName(), loginDTO.getEmail());
         if(isPlayer.isPresent())
-            return ResponseEntity.ok(isPlayer.get());
+            return ResponseEntity.ok((Player) isPlayer.get());
 
         return ResponseEntity.badRequest().body("Invalid Details");
     }

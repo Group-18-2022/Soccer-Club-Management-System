@@ -12,7 +12,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
-import za.ac.cput.domain.contract.PlayerContract;
 import za.ac.cput.service.contract.ManagerContractService;
 import za.ac.cput.service.contract.impl.ManagerContractServiceImpl;
 import za.ac.cput.domain.contract.ManagerContract;
