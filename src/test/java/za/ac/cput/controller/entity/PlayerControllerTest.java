@@ -26,7 +26,8 @@ class PlayerControllerTest
 
     private Player player;
     private String baseURL;
-
+    private String SECURITY_USERNAME = "Manager";
+    private String SECURITY_PASSWORD = "ManagerPassword";
     @BeforeEach
     void setUp() {
         assertNotNull(controller);
@@ -42,7 +43,7 @@ class PlayerControllerTest
     void save()
     {
         String url = baseURL + "save";
-        ResponseEntity<Player> response = this.restTemplate.postForEntity(
+        ResponseEntity<Player> response = this.restTemplate.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).postForEntity(
                 url, this.player, Player.class);
         assertAll(
 
@@ -54,7 +55,7 @@ class PlayerControllerTest
     @Test @Order(2)
     void read() {
         String url = baseURL + "read/" + this.player.getEmpNumber();
-        ResponseEntity<Player> response = this.restTemplate.getForEntity(url, Player.class);
+        ResponseEntity<Player> response = this.restTemplate.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).getForEntity(url, Player.class);
         assertAll(
                 () -> assertNotEquals(HttpStatus.OK, response.getStatusCode()),
                 () -> assertNotNull(response.getBody())
@@ -64,13 +65,13 @@ class PlayerControllerTest
     @Test @Order(3)
     void deleteById() {
         String url = baseURL + "delete/" + this.player.getEmpNumber();
-        this.restTemplate.delete(url);
+        this.restTemplate.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).delete(url);
     }
 
     @Test @Order(4)
     void findAll() {
         String url = baseURL + "all";
-        ResponseEntity<Player[]> response = this.restTemplate
+        ResponseEntity<Player[]> response = this.restTemplate.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD)
                 .getForEntity(url, Player[].class);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, response.getStatusCode()),

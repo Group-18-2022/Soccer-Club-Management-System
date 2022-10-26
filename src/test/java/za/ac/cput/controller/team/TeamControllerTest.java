@@ -28,7 +28,8 @@ class TeamControllerTest {
     private TestRestTemplate TeamRestTemp;
     private Team team;
     private  String TeamBaseUrl;
-
+    private String SECURITY_USERNAME = "Manager";
+    private String SECURITY_PASSWORD = "ManagerPassword";
     @BeforeEach
     public void startUp(){
         assertNotNull(teamController);
@@ -40,7 +41,7 @@ class TeamControllerTest {
     @Order(1)
     void save() {
         String saveUrl = TeamBaseUrl + "save";
-        ResponseEntity<Team> saveResponse = this.TeamRestTemp.
+        ResponseEntity<Team> saveResponse = this.TeamRestTemp.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).
                 postForEntity(saveUrl,this.team, Team.class);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, saveResponse.getStatusCode()),
@@ -52,7 +53,7 @@ class TeamControllerTest {
     @Order(2)
     void read() {
         String teamBaseUrl = TeamBaseUrl + "read/" + this.team.getTeamId();
-        ResponseEntity<Team> readResponse = this.TeamRestTemp.getForEntity(teamBaseUrl,Team.class);
+        ResponseEntity<Team> readResponse = this.TeamRestTemp.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).getForEntity(teamBaseUrl,Team.class);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, readResponse.getStatusCode()),
                 () -> assertNotEquals(null,readResponse)
@@ -64,21 +65,21 @@ class TeamControllerTest {
     @Order(3)
     void deleteById() {
         String deleteByIdUrl = TeamBaseUrl + "delete/" + this.team.getTeamId();
-        this.TeamRestTemp.delete(deleteByIdUrl);
+        this.TeamRestTemp.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).delete(deleteByIdUrl);
     }
 
     @Test
     @Order(4)
     void delete() {
         String deleteUrl = TeamBaseUrl + "delete/";
-        this.TeamRestTemp.delete(deleteUrl);
+        this.TeamRestTemp.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).delete(deleteUrl);
     }
 
     @Test
     @Order(5)
     void findAll() {
         String findAllUrl = TeamBaseUrl +"all";
-        ResponseEntity<Team[]> findAllResponse = this.TeamRestTemp.
+        ResponseEntity<Team[]> findAllResponse = this.TeamRestTemp.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).
                 getForEntity(findAllUrl,Team[].class);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, findAllResponse.getStatusCode()),

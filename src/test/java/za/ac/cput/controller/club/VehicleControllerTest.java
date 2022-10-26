@@ -30,7 +30,8 @@ class VehicleControllerTest {
 
     private Vehicle vehicle;
     private String baseURL;
-
+    private String SECURITY_USERNAME = "Manager";
+    private String SECURITY_PASSWORD = "ManagerPassword";
     @BeforeEach
     void setUp() {
         assertNotNull(controller);
@@ -43,8 +44,8 @@ class VehicleControllerTest {
     @Order(1)
     void save() {
         String url = baseURL + "save";
-        ResponseEntity<Vehicle> response = this.restTemplate.
-                postForEntity(url,this.vehicle, Vehicle.class);
+        ResponseEntity<Vehicle> response = this.restTemplate.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD)
+                .postForEntity(url,this.vehicle, Vehicle.class);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
                 () -> assertNotEquals(null,response)
@@ -55,7 +56,7 @@ class VehicleControllerTest {
     @Order(2)
     void read() {
         String url = baseURL + "read/" + this.vehicle.getVinNumber();
-        ResponseEntity<Vehicle> response = this.restTemplate.getForEntity(url,Vehicle.class);
+        ResponseEntity<Vehicle> response = this.restTemplate.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).getForEntity(url,Vehicle.class);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
                 () -> assertNotEquals(null,response)
@@ -66,21 +67,21 @@ class VehicleControllerTest {
     @Order(3)
     void delete() {
         String url = baseURL + "delete/";
-        this.restTemplate.delete(url);
+        this.restTemplate.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).delete(url);
     }
 
     @Test
     @Order(4)
     void deleteById() {
         String url = baseURL + "delete/" + this.vehicle.getVinNumber();
-        this.restTemplate.delete(url);
+        this.restTemplate.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).delete(url);
     }
 
     @Test
     @Order(5)
     void findAll() {
         String url = baseURL +"all";
-        ResponseEntity<Vehicle[]> response = this.restTemplate.getForEntity(url,Vehicle[].class);
+        ResponseEntity<Vehicle[]> response = this.restTemplate.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).getForEntity(url,Vehicle[].class);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
                 () -> assertNotNull(response.getBody())

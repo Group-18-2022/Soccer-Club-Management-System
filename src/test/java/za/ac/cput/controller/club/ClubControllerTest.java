@@ -26,6 +26,8 @@ class ClubControllerTest {
 
     private Club club;
     private String clubURL;
+    private String SECURITY_USERNAME = "Manager";
+    private String SECURITY_PASSWORD = "ManagerPassword";
 
     @BeforeEach
     public void startUp() {
@@ -38,7 +40,7 @@ class ClubControllerTest {
     @Order(1)
     void save() {
         String url = clubURL + "save";
-        ResponseEntity<Club> saveResponse = this.clubRestTemp.postForEntity(
+        ResponseEntity<Club> saveResponse = this.clubRestTemp.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).postForEntity(
                 url, this.club, Club.class);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, saveResponse.getStatusCode()),
@@ -49,7 +51,7 @@ class ClubControllerTest {
     @Test @Order(2)
     void read() {
         String url = clubURL + "read/" + this.club.getClubId();
-        ResponseEntity<Club> readResponse = this.clubRestTemp.getForEntity(url, Club.class);
+        ResponseEntity<Club> readResponse = this.clubRestTemp.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).getForEntity(url, Club.class);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, readResponse.getStatusCode()),
                 () -> assertNotNull(readResponse.getBody())
@@ -59,20 +61,20 @@ class ClubControllerTest {
     @Test @Order(3)
     void deleteById() {
         String url = clubURL + "delete/" + this.club.getClubId();
-        this.clubRestTemp.delete(url);
+        this.clubRestTemp.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).delete(url);
     }
 
     @Test
     @Order(4)
     void delete() {
         String deleteUrl = clubURL + "delete";
-        this.clubRestTemp.delete(deleteUrl);
+        this.clubRestTemp.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).delete(deleteUrl);
     }
 
     @Test @Order(5)
     void findAll() {
         String url = clubURL + "all";
-        ResponseEntity<Club[]> response = this.clubRestTemp
+        ResponseEntity<Club[]> response = this.clubRestTemp.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD)
                 .getForEntity(url, Club[].class);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, response.getStatusCode()),

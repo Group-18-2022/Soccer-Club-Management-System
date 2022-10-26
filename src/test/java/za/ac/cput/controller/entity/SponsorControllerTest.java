@@ -30,7 +30,8 @@ class SponsorControllerTest {
 
     private Sponsor sponsor;
     private String baseURL;
-
+    private String SECURITY_USERNAME = "Manager";
+    private String SECURITY_PASSWORD = "ManagerPassword";
     @BeforeEach
     void setUp() {
         assertNotNull(controller);
@@ -43,7 +44,7 @@ class SponsorControllerTest {
     @Order(1)
     void save() {
         String url = baseURL + "save";
-        ResponseEntity<Sponsor> response = this.restTemplate.
+        ResponseEntity<Sponsor> response = this.restTemplate.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).
                 postForEntity(url,this.sponsor, Sponsor.class);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
@@ -55,7 +56,7 @@ class SponsorControllerTest {
     @Order(2)
     void read() {
         String url = baseURL + "read/" + this.sponsor.getRoleId();
-        ResponseEntity<Sponsor> response = this.restTemplate.getForEntity(url,Sponsor.class);
+        ResponseEntity<Sponsor> response = this.restTemplate.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).getForEntity(url,Sponsor.class);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
                 () -> assertNotEquals(null,response)
@@ -66,21 +67,21 @@ class SponsorControllerTest {
     @Order(3)
     void delete() {
         String url = baseURL + "delete/";
-        this.restTemplate.delete(url);
+        this.restTemplate.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).delete(url);
     }
 
     @Test
     @Order(4)
     void deleteById() {
         String url = baseURL + "delete/" + this.sponsor.getRoleId();
-        this.restTemplate.delete(url);
+        this.restTemplate.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).delete(url);
     }
 
     @Test
     @Order(5)
     void findAll() {
         String url = baseURL +"all";
-        ResponseEntity<Sponsor[]> response = this.restTemplate.getForEntity(url,Sponsor[].class);
+        ResponseEntity<Sponsor[]> response = this.restTemplate.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).getForEntity(url,Sponsor[].class);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
                 () -> assertNotNull(response.getBody())

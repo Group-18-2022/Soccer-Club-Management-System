@@ -23,7 +23,8 @@ class LocationControllerTest {
 
     private Location location;
     private String baseURL;
-
+    private String SECURITY_USERNAME = "Manager";
+    private String SECURITY_PASSWORD = "ManagerPassword";
     @BeforeEach
     void setUp() {
         assertNotNull(controller);
@@ -35,7 +36,7 @@ class LocationControllerTest {
     @Order(1)
     void save() {
         String url = baseURL + "save";
-        ResponseEntity<Location> response = this.restTemplate.postForEntity(
+        ResponseEntity<Location> response = this.restTemplate.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).postForEntity(
                 url, this.location, Location.class);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
@@ -46,7 +47,7 @@ class LocationControllerTest {
     @Test @Order(2)
     void read() {
         String url = baseURL + "read/" + this.location.getLocationId();
-        ResponseEntity<Location> response = this.restTemplate.getForEntity(url, Location.class);
+        ResponseEntity<Location> response = this.restTemplate.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).getForEntity(url, Location.class);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
                 () -> assertNotNull(response.getBody())
@@ -56,13 +57,13 @@ class LocationControllerTest {
     @Test @Order(3)
     void deleteById() {
         String url = baseURL + "delete/" + this.location.getLocationId();
-        this.restTemplate.delete(url);
+        this.restTemplate.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).delete(url);
     }
 
     @Test @Order(4)
     void findAll() {
         String url = baseURL + "all";
-        ResponseEntity<Location[]> response = this.restTemplate
+        ResponseEntity<Location[]> response = this.restTemplate.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD)
                 .getForEntity(url, Location[].class);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, response.getStatusCode()),

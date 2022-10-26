@@ -28,7 +28,8 @@ class ContactInfoControllerTest {
 
     private ContactInformation contactInformation;
     private String contactURL;
-
+    private String SECURITY_USERNAME = "Manager";
+    private String SECURITY_PASSWORD = "ManagerPassword";
     @BeforeEach
     public void startUp() {
         assertNotNull(contactController);
@@ -42,7 +43,7 @@ class ContactInfoControllerTest {
     @Order(1)
     void save() {
         String url = contactURL + "save";
-        ResponseEntity<ContactInformation> saveResponse = this.contactRestTemp.postForEntity(
+        ResponseEntity<ContactInformation> saveResponse = this.contactRestTemp.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).postForEntity(
                 url, this.contactInformation, ContactInformation.class);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, saveResponse.getStatusCode()),
@@ -53,7 +54,7 @@ class ContactInfoControllerTest {
     @Test @Order(2)
     void read() {
         String url = contactURL + "read/" + this.contactInformation.getContactId();
-        ResponseEntity<ContactInformation> readResponse = this.contactRestTemp.getForEntity(url, ContactInformation.class);
+        ResponseEntity<ContactInformation> readResponse = this.contactRestTemp.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).getForEntity(url, ContactInformation.class);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, readResponse.getStatusCode()),
                 () -> assertNotNull(readResponse.getBody())
@@ -63,20 +64,20 @@ class ContactInfoControllerTest {
     @Test @Order(3)
     void deleteById() {
         String url = contactURL + "delete/" + this.contactInformation.getContactId();
-        this.contactRestTemp.delete(url);
+        this.contactRestTemp.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).delete(url);
     }
 
     @Test
     @Order(4)
     void delete() {
         String deleteUrl = contactURL + "delete";
-        this.contactRestTemp.delete(deleteUrl);
+        this.contactRestTemp.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).delete(deleteUrl);
     }
 
     @Test @Order(5)
     void findAll() {
         String url = contactURL + "all";
-        ResponseEntity<Club[]> response = this.contactRestTemp
+        ResponseEntity<Club[]> response = this.contactRestTemp.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD)
                 .getForEntity(url, Club[].class);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, response.getStatusCode()),

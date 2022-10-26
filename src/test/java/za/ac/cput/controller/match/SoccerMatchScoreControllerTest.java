@@ -28,7 +28,8 @@ class SoccerMatchScoreControllerTest {
 
     private MatchScore matchScore;
     private String baseURL;
-
+    private String SECURITY_USERNAME = "Manager";
+    private String SECURITY_PASSWORD = "ManagerPassword";
     @BeforeEach
     void setUp() {
         insertMatch();
@@ -42,7 +43,7 @@ class SoccerMatchScoreControllerTest {
     void save() {
         String url = baseURL + "save";
         //insert match
-        ResponseEntity<MatchScore> response = this.restTemplate.postForEntity(
+        ResponseEntity<MatchScore> response = this.restTemplate.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).postForEntity(
                 url, this.matchScore, MatchScore.class);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
@@ -53,7 +54,7 @@ class SoccerMatchScoreControllerTest {
     @Test @Order(2)
     void read() {
         String url = baseURL + "read/" + this.matchScore.getMatchId();
-        ResponseEntity<MatchScore> response = this.restTemplate.getForEntity(url, MatchScore.class);
+        ResponseEntity<MatchScore> response = this.restTemplate.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).getForEntity(url, MatchScore.class);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
                 () -> assertNotNull(response.getBody())
@@ -63,13 +64,13 @@ class SoccerMatchScoreControllerTest {
     @Test @Order(3)
     void deleteById() {
         String url = baseURL + "delete/" + this.matchScore.getMatchId();
-        this.restTemplate.delete(url);
+        this.restTemplate.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD).delete(url);
     }
 
     @Test @Order(4)
     void findAll() {
         String url = baseURL + "all";
-        ResponseEntity<MatchScore[]> response = this.restTemplate
+        ResponseEntity<MatchScore[]> response = this.restTemplate.withBasicAuth(SECURITY_USERNAME, SECURITY_PASSWORD)
                 .getForEntity(url, MatchScore[].class);
         assertAll(
                 () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
